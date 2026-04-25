@@ -1,0 +1,220 @@
+body{
+    margin: 0;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.header .container {
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.header {
+    position: relative;
+    z-index: 1000; /* Header über Overlay */
+}
+
+.logo img {
+    height: 100%;
+}
+
+.lang {
+    display: flex;
+    gap: 8px;
+}
+
+.lang button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu span {
+    width: 20px;
+    height: 2px;
+    background: black;
+    display: block;
+}
+
+.about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+.about .left,
+.about .right {
+    width: 50%;
+}
+
+.about .left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.about .info .item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about .right img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.skills .container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skills-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.skills-info {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.skills-frame {
+  position: relative;
+  padding: 40px 40px 40px;
+}
+
+/* Linke Linie */
+.skills-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: #ddd;
+}
+
+/* Rechte Linie */
+.skills-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: #ddd;
+}
+
+/* Untere Linie */
+.skills-inner {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.skills-inner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #ddd;
+}
+
+/* Obere Linie + Titel */
+.skills-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* durchgehende obere Linie */
+.skills-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #ddd;
+}
+
+/* Text schneidet die Linie */
+.skills-title span {
+  position: relative;
+  padding: 0 20px;
+  background: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  z-index: 2;
+}
+.references-list {
+    display: flex;
+    gap: 30px;
+}
+
+.reference-item {
+    flex: 1; /* alle exakt gleich breit */
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px;
+}
