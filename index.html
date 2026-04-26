@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/overlay.css">
     <script src="./js/scrtips.js" defer></script>
+    <script src="./js/animation.js" defer></script>
     <script>
         function toggleMenu() {
             document.querySelector('.menu-overlay').classList.toggle('active');
@@ -21,15 +22,17 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo"><img src="MK.svg" alt="MK Logo"></div>
+            <div class="logo"><img src="./assets/img/[MK].svg" alt="MK Logo"></div>
 
-            <div class="lang">
-                <button>EN</button>
-                <button>DE</button>
-            </div>
+            <div class="container-right">
+                <div class="lang">
+                    <button>EN</button>
+                    <button>DE</button>
+                </div>
 
-            <div class="menu" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
+                <div class="menu" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </div>
     </header>
@@ -55,19 +58,42 @@
         <section class="hero">
             <div class="container">
 
-                <h1>Frontend Developer</h1>
+                <!-- TOP: H1 + Line + Name -->
+                <div class="hero-header-top">
 
-                <div class="divider"></div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Frontend</span>
+                        <span class="second-line">Developer</span>
+                    </h1>
 
-                <p class="name">Stefan Engel</p>
+                    <div class="top-row">
+                        <div class="top-inner">
 
-                <div class="email">stefan@email.com</div>
+                            <div class="line-box">
+                                <span class="line"></span>
+                            </div>
 
-                <div class="scroll">
-                    <div class="icon">↓</div>
-                    <span>Scroll Down</span>
+                            <div class="name-box">
+                                <span class="name">Michael Kühn</span>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+
+                <div class="hero-header-bottom">
+
+                    <div class="bottom-row">
+                        <div class="email">stefan@email.com</div>
+                    </div>
+
+                    <div class="scroll">
+                        <img id="scroll-arrow" src="./assets/animation/arrow-icons/Frame1.svg" alt="">
+                        <span>Scroll Down</span>
+                    </div>
+
+                </div>
         </section>
 
         <section class="about">
