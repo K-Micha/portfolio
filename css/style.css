@@ -1,5 +1,57 @@
-body{
+@font-face {
+    font-family: 'Syne';
+    src: url('/assets/fonts/syne.bold.ttf') format('truetype');
+    font-weight: 800 bold;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('./fonts/Overpass-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+.headline {
+    font-family: 'Syne', sans-serif;
+}
+
+p,
+li,
+input,
+a,
+button {
+    font-family: 'Overpass', sans-serif;
+}
+
+.hero-title .title-line,
+.hero-title .second-line {
+    font-family: 'Syne' !important;
+}
+
+.title-line {
+    padding-left: 30px;
+}
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+main {
+    flex: 1;
 }
 
 .container {
@@ -8,49 +60,143 @@ body{
     padding: 0 16px;
 }
 
+.container-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
 .header .container {
     height: 33px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
+    height: 92px;
+    padding: 0 100px 0 100px;
+}
+
+.hero{
+    margin-top: calc(204px - 90px);
+}
+
+.hero .container {
+    padding: 0 100px 0 100px;
+    font-family: 'Syne', sans-serif;
+}
+
+.hero-title {
+    font-size: 128px;
+    font-weight: bolder;
+    letter-spacing: -2.5%;
+    justify-self: center;
+}
+
+.hero-title .second-line {
+    display: block;
+    margin-top: -20px;
+    line-height: 1.0;
 }
 
 .header {
     position: relative;
-    z-index: 1000; /* Header über Overlay */
+    z-index: 1000;
+    /* Header über Overlay */
 }
 
 .logo img {
-    height: 100%;
+    height: 30px;
 }
 
 .lang {
     display: flex;
-    gap: 8px;
+    gap: 6px;
+    margin-right: 35px;
 }
 
 .lang button {
     background: none;
     border: none;
-    font-size: 14px;
+    font-size: 24px;
     cursor: pointer;
+    border: 2px solid greenyellow;
 }
 
 .menu {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 17px;
     cursor: pointer;
 }
 
 .menu span {
-    width: 20px;
+    width: 40px;
     height: 2px;
     background: black;
     display: block;
 }
 
+/* hero info */
+.hero-header-top{
+    justify-self: center;
+}
+
+.top-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 30px;
+}
+
+.hero-header-bottom{
+    height: 260px;
+    position: relative;
+}
+
+.scroll {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  transform: translateX(0);
+}
+
+.line-box {
+  width: 350px;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+
+.name-box .name {
+  font-size: 48px;
+  letter-spacing: -2.5%;
+  font-weight: bold;
+  color: rgba(0, 188, 143, 1);
+}
+
+.email{
+    transform: translateY(130px) rotate(-90deg);
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/*About me */
 .about .container {
     display: flex;
     justify-content: space-between;
@@ -80,6 +226,7 @@ body{
     height: auto;
     border-radius: 8px;
 }
+
 .skills .container {
     margin: 0 auto;
     text-align: center;
@@ -108,82 +255,84 @@ body{
 }
 
 .skills-frame {
-  position: relative;
-  padding: 40px 40px 40px;
+    position: relative;
+    padding: 40px 40px 40px;
 }
 
 /* Linke Linie */
 .skills-frame::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 1px;
-  background: #ddd;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background: #ddd;
 }
 
 /* Rechte Linie */
 .skills-frame::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 1px;
-  background: #ddd;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    background: #ddd;
 }
 
 /* Untere Linie */
 .skills-inner {
-  position: relative;
-  padding-bottom: 40px;
+    position: relative;
+    padding-bottom: 40px;
 }
 
 .skills-inner::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: #ddd;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: #ddd;
 }
 
 /* Obere Linie + Titel */
 .skills-title {
-  position: relative;
-  text-align: center;
-  margin-bottom: 40px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 /* durchgehende obere Linie */
 .skills-title::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: #ddd;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #ddd;
 }
 
 /* Text schneidet die Linie */
 .skills-title span {
-  position: relative;
-  padding: 0 20px;
-  background: #fff;
-  font-size: 24px;
-  font-weight: 600;
-  z-index: 2;
+    position: relative;
+    padding: 0 20px;
+    background: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    z-index: 2;
 }
+
 .references-list {
     display: flex;
     gap: 30px;
 }
 
 .reference-item {
-    flex: 1; /* alle exakt gleich breit */
+    flex: 1;
+    /* alle exakt gleich breit */
     border: 1px solid #ddd;
     padding: 30px;
     border-radius: 12px;
