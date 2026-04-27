@@ -58,6 +58,7 @@ const midL = document.getElementById('mid');
 const botL = document.getElementById('bot');
 
 let open = false;
+let isAnimating = false;
 const FRAME_DELAY = 50;
 
 /**
@@ -65,9 +66,9 @@ const FRAME_DELAY = 50;
 */
 function frame1() {
   return {
-    top: { w: 40, x: 0,  y: -14, r: 0 },
-    mid: { w: 40, x: 0,  y: 0,   r: 0 },
-    bot: { w: 40, x: 0,  y: 14,  r: 0 }
+    top: { w: 40, x: 0, y: -14, r: 0 },
+    mid: { w: 40, x: 0, y: 0, r: 0 },
+    bot: { w: 40, x: 0, y: 14, r: 0 }
   };
 }
 
@@ -76,9 +77,9 @@ function frame1() {
 */
 function frame2() {
   return {
-    top: { w: 20, x: 0,  y: -14, r: 0 },
-    mid: { w: 40, x: 0,  y: 0,   r: 0 },
-    bot: { w: 20, x: 0,  y: 14,  r: 0 }
+    top: { w: 20, x: 0, y: -14, r: 0 },
+    mid: { w: 40, x: 0, y: 0, r: 0 },
+    bot: { w: 20, x: 0, y: 14, r: 0 }
   };
 }
 
@@ -87,9 +88,9 @@ function frame2() {
 */
 function frame3() {
   return {
-    top: { w: 20, x: 10,  y: -14, r: 0 },
-    mid: { w: 40, x: 0,   y: 0,   r: 0 },
-    bot: { w: 20, x: -10, y: 14,  r: 0 }
+    top: { w: 20, x: 10, y: -14, r: 0 },
+    mid: { w: 40, x: 0, y: 0, r: 0 },
+    bot: { w: 20, x: -10, y: 14, r: 0 }
   };
 }
 
@@ -98,9 +99,9 @@ function frame3() {
 */
 function frame4() {
   return {
-    top: { w: 20, x: 10,  y: -10, r: -45 },
-    mid: { w: 40, x: 0,   y: 0,   r: 45 },
-    bot: { w: 20, x: -10, y: 10,  r: -45 }
+    top: { w: 20, x: 10, y: -10, r: -45 },
+    mid: { w: 40, x: 0, y: 0, r: 45 },
+    bot: { w: 20, x: -10, y: 10, r: -45 }
   };
 }
 
@@ -111,7 +112,7 @@ function frame5() {
   return {
     top: { w: 40, x: 0, y: 0, r: -45 },
     mid: { w: 40, x: 0, y: 0, r: 45 },
-    bot: { w: 0,  x: 0, y: 0, r: 0 }
+    bot: { w: 0, x: 0, y: 0, r: 0 }
   };
 }
 
@@ -133,11 +134,10 @@ function applyFrame(f) {
 function applyLine(line, f) {
   line.style.width = f.w + "px";
   line.style.transformOrigin = "center center";
-  line.style.transform = `
-    translate(-50%, -50%)
+  line.style.transform =
+    `translate(-50%, -50%)
     translate(${f.x}px, ${f.y}px)
-    rotate(${f.r}deg)
-  `;
+    rotate(${f.r}deg)`;
 }
 
 /**
@@ -145,6 +145,7 @@ function applyLine(line, f) {
 */
 function animate(frames) {
   let i = 0;
+  isAnimating = true;
 
   function step() {
     applyFrame(frames[i]());
@@ -152,7 +153,10 @@ function animate(frames) {
 
     if (i < frames.length) {
       setTimeout(step, FRAME_DELAY);
+      return;
     }
+
+    isAnimating = false;
   }
 
   step();
@@ -162,6 +166,8 @@ function animate(frames) {
 * Toggles burger animation on click.
 */
 menu.addEventListener('click', () => {
+  if (isAnimating) return;
+
   animate(open ? framesClose : framesOpen);
   open = !open;
 });
