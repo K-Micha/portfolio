@@ -57,7 +57,6 @@ main {
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 16px;
 }
 
 .container-right {
@@ -82,7 +81,6 @@ main {
 }
 
 .hero .container {
-    padding: 0 100px 0 100px;
     font-family: 'Syne', sans-serif;
 }
 
@@ -147,6 +145,10 @@ main {
     justify-self: center;
 }
 
+.hero{
+    padding: 0 100px 0 100px;
+}
+
 .top-inner {
   display: flex;
   align-items: center;
@@ -157,6 +159,7 @@ main {
 .hero-header-bottom{
     height: 260px;
     position: relative;
+    margin-right: 30px;
 }
 
 .scroll {
@@ -203,14 +206,20 @@ main {
 
 /*About me */
 .about .container {
+    padding: 0 100px 0 100px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 80px;
+    margin-top: 120px;
 }
 
-.about .left,
-.about .right {
+.about h2{
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.about .left {
     width: 50%;
 }
 
@@ -226,10 +235,44 @@ main {
     gap: 8px;
 }
 
+.about p{
+    font-size: 22px;
+}
+
 .about .right img {
-    width: 100%;
     height: auto;
+    width: auto;
     border-radius: 8px;
+    margin-top: 80px;
+}
+.about img {
+    max-width: 400px;   
+}
+
+.about .btn-wrap{
+    width: auto;
+    align-self: center;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 48px;
+}
+
+.cta{
+    margin-top: 30px;
+    padding: 20px 60px 20px 60px;
+}
+
+.info .icon{
+    height: 40px;
+    width: 40px;
+}
+
+.info span{
+    font-size: 22px;
 }
 
 .skills .container {
