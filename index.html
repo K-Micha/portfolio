@@ -11,18 +11,17 @@
     <link rel="stylesheet" href="./css/overlay.css">
     <script src="./js/scrtips.js" defer></script>
     <script src="./js/animation.js" defer></script>
-    <script>
-        function toggleMenu() {
-            document.querySelector('.menu-overlay').classList.toggle('active');
-        }
-    </script>
 
 </head>
 
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo"><img src="./assets/img/[MK].svg" alt="MK Logo"></div>
+            <div class="logo">
+                <a href="/index.html">
+                    <img src="./assets/img/[MK].svg" alt="MK Logo">
+                </a>
+            </div>
 
             <div class="container-right">
                 <div class="lang">
@@ -30,8 +29,10 @@
                     <button>DE</button>
                 </div>
 
-                <div class="menu" onclick="toggleMenu()">
-                    <span></span><span></span><span></span>
+                <div id="menu" class="menu">
+                    <span id="top" class="line top"></span>
+                    <span id="mid" class="line mid"></span>
+                    <span id="bot" class="line bot"></span>
                 </div>
             </div>
         </div>
