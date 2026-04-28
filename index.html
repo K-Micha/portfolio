@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/overlay.css">
+    <script src="./js/animateArrow.js" defer></script>
     <script src="./js/scrtips.js" defer></script>
     <script src="./js/animation.js" defer></script>
 
@@ -104,7 +105,12 @@
                     <h2>About me</h2>
 
                     <div class="text">
-                        <p>Write some information about yourself...</p>
+                        <p>I have consciously decided to pursue software development and currently focus on frontend
+                            development.<br><br>
+                            My work emphasizes structured, clear solutions and clean implementation. I aim to understand
+                            how applications work and how they can be improved.<br><br>
+                            I work independently and in an organized manner, and I can also contribute effectively
+                            within a team.</p>
                     </div>
 
                     <div class="info">
@@ -120,7 +126,7 @@
                     </div>
 
                     <div class="btn-wrap">
-                    <button class="cta">Let’s talk</button>
+                        <button class="cta">Let’s talk</button>
                     </div>
                 </div>
 
@@ -132,8 +138,12 @@
         </section>
 
         <div class="section-divider divider-right">
-            <div class="container">
-                <img src="arrow.svg" alt="Scroll Arrow">
+            <div id="arrow-container" class="container">
+                <div class="arrow">
+                    <div class="tail"></div>
+                    <div class="head-v"></div>
+                    <div class="head-h"></div>
+                </div>
             </div>
         </div>
 
@@ -147,21 +157,21 @@
 
                     <div class="skills-inner">
 
-                        <div class="skills-grid">
-                            <div class="skill"><img src="angular.svg"><span>Angular</span></div>
-                            <div class="skill"><img src="ts.svg"><span>TypeScript</span></div>
-                            <div class="skill"><img src="js.svg"><span>JavaScript</span></div>
-                            <div class="skill"><img src="html.svg"><span>HTML</span></div>
-                            <div class="skill"><img src="css.svg"><span>CSS</span></div>
-                            <div class="skill"><img src="supabase.svg"><span>Supabase</span></div>
-                            <div class="skill"><img src="git.svg"><span>Git</span></div>
-                            <div class="skill"><img src="scrum.svg"><span>Scrum</span></div>
-                            <div class="skill"><img src="api.svg"><span>REST-API</span></div>
-                            <div class="skill"><img src="material.svg"><span>Material Design</span></div>
+                        <div id="skills" class="skills-grid">
+                            <div class="skill"><img src="./assets/icons/frondend/angular.svg"><span>Angular</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/typescript.svg"><span>TypeScript</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/javascript.svg"><span>JavaScript</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/html.svg"><span>HTML</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/css.svg"><span>CSS</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/supabase.svg"><span>Supabase</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/git.svg"><span>Git</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/scrum.svg"><span>Scrum</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/api.svg"><span>REST-API</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/test-automation.svg"><span>Material Design</span></div>
                         </div>
 
                         <div class="skills-info">
-                            <img src="info.svg">
+                            <img src="./assets/icons/frondend/continued-learning.svg">
                             <span>Don’t see the skill you need? Contact me, I’m always ready to learn!</span>
                         </div>
 
@@ -172,8 +182,12 @@
         </section>
 
         <div class="section-divider divider-left">
-            <div class="container">
-                <img src="arrow-left.svg" alt="Scroll Arrow Left">
+            <div id="arrow-container-left" class="container">
+                <div class="arrow">
+                    <div class="tail"></div>
+                    <div class="head-v"></div>
+                    <div class="head-h"></div>
+                </div>
             </div>
         </div>
 
@@ -436,8 +450,12 @@
         </section>
 
         <div class="section-divider divider-right">
-            <div class="container">
-                <img src="arrow.svg" alt="Scroll Arrow">
+            <div id="arrow-container-too" class="container">
+                <div class="arrow">
+                    <div class="tail"></div>
+                    <div class="head-v"></div>
+                    <div class="head-h"></div>
+                </div>
             </div>
         </div>
 

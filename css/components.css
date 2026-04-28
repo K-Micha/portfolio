@@ -1,0 +1,130 @@
+.section-divider {
+  height: 300px;
+  display: flex;
+  position: relative;
+    max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.divider-right {
+  justify-content: flex-end;
+}
+
+.divider-right .container {
+  margin-right: 101px;
+}
+
+.divider-left {
+  justify-content: flex-start;
+}
+
+.divider-left .container {
+  margin-left: 101px;
+}
+
+.section-divider .container {
+  height: 250px;
+  width: 250px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+}
+
+.arrow div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 4px;
+  background: black;
+  transform-origin: left center;
+}
+
+.tail {
+  width: 167.02px;
+  transform: rotate(-45deg);
+}
+
+.head-v {
+  width: 45.33px;
+  transform: rotate(-90deg);
+}
+
+.head-h {
+  width: 45.33px;
+  transform: translateX(-2px);
+}
+
+.divider-right .arrow {
+  left: 130px;
+  top: 135px;
+}
+
+.divider-right .arrow.arrow-active {
+  animation: arrowMoveRight 400ms ease forwards;
+}
+
+.divider-right .tail.arrow-active {
+  animation: tailGrow 400ms ease forwards;
+}
+
+@keyframes arrowMoveRight {
+  0% {
+    left: 130px;
+    top: 135px;
+  }
+
+  100% {
+    left: 62px;
+    top: 203px;
+  }
+}
+
+.divider-left .arrow {
+  left: auto;
+  right: 130px;
+  top: 135px;
+  transform: scaleX(-1);
+}
+
+.divider-left .arrow.arrow-active {
+  animation: arrowMoveLeft 400ms ease forwards;
+}
+
+.divider-left .tail.arrow-active {
+  animation: tailGrow 400ms ease forwards;
+}
+
+@keyframes arrowMoveLeft {
+  0% {
+    right: 130px;
+    top: 135px;
+  }
+
+  100% {
+    right: 62px;
+    top: 203px;
+  }
+}
+
+/* =========================
+   TAIL (shared)
+========================= */
+
+@keyframes tailGrow {
+  0% {
+    width: 167.02px;
+  }
+
+  50% {
+    width: 263.04px;
+  }
+
+  100% {
+    width: 167.02px;
+  }
+}

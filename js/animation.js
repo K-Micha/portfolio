@@ -173,3 +173,4 @@ menu.addEventListener('click', () => {
 });
 
 applyFrame(frame1());
+
