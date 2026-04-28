@@ -283,13 +283,13 @@ main {
 .skills .container {
     margin: 0 auto;
     text-align: center;
+    padding: 0 100px 0 100px;
 }
 
 .skills-grid {
-    margin-top: 40px;
+    margin-top: 110px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 40px;
     row-gap: 75px;
 }
 
@@ -300,49 +300,49 @@ main {
     gap: 10px;
 }
 
-.skill img{
+.skill img {
     height: 75px;
 }
 
-.skill span{
+.skill span {
     font-size: 16px;
     font-weight: 700;
     font-family: 'Overpass', sans-serif;
 }
 
 .skills-info {
-    margin-top: 40px;
+    margin-top: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
+    margin-bottom: 60px;
 }
 
 .skills-frame {
     position: relative;
-    padding: 40px 40px 40px;
 }
 
 /* Linke Linie */
 .skills-frame::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 50px;
     bottom: 0;
     left: 0;
-    width: 1px;
-    background: #ddd;
+    width: 4px;
+    background: black;
 }
 
 /* Rechte Linie */
 .skills-frame::after {
     content: "";
     position: absolute;
-    top: 0;
+    top: 50px;
     bottom: 0;
     right: 0;
-    width: 1px;
-    background: #ddd;
+    width: 4px;
+    background: black;
 }
 
 /* Untere Linie */
@@ -357,8 +357,8 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 1px;
-    background: #ddd;
+    height: 4px;
+    background: black;
 }
 
 /* Obere Linie + Titel */
@@ -375,8 +375,8 @@ main {
     top: 50%;
     left: 0;
     right: 0;
-    height: 1px;
-    background: #ddd;
+    height: 4px;
+    background: black;
 }
 
 /* Text schneidet die Linie */
@@ -384,9 +384,10 @@ main {
     position: relative;
     padding: 0 20px;
     background: #fff;
-    font-size: 24px;
+    font-size: 78px;
     font-weight: 600;
     z-index: 2;
+    font-family: 'Syne', sans-serif;
 }
 
 .references-list {
