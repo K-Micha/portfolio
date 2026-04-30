@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/overlay.css">
+    <link rel="stylesheet" href="./css/projekt.css">
     <script src="./js/animateArrow.js" defer></script>
     <script src="./js/scrtips.js" defer></script>
     <script src="./js/animation.js" defer></script>
@@ -135,8 +136,8 @@
                 </div>
 
             </div>
-        </section>
 
+        </section>
         <div class="section-divider divider-right">
             <div id="arrow-container" class="container">
                 <div class="arrow">
@@ -159,15 +160,19 @@
 
                         <div class="skills-grid">
                             <div class="skill"><img src="./assets/icons/frondend/angular.svg"><span>Angular</span></div>
-                            <div class="skill"><img src="./assets/icons/frondend/typescript.svg"><span>TypeScript</span></div>
-                            <div class="skill"><img src="./assets/icons/frondend/javascript.svg"><span>JavaScript</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/typescript.svg"><span>TypeScript</span>
+                            </div>
+                            <div class="skill"><img src="./assets/icons/frondend/javascript.svg"><span>JavaScript</span>
+                            </div>
                             <div class="skill"><img src="./assets/icons/frondend/html.svg"><span>HTML</span></div>
                             <div class="skill"><img src="./assets/icons/frondend/css.svg"><span>CSS</span></div>
-                            <div class="skill"><img src="./assets/icons/frondend/supabase.svg"><span>Supabase</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/supabase.svg"><span>Supabase</span>
+                            </div>
                             <div class="skill"><img src="./assets/icons/frondend/git.svg"><span>Git</span></div>
                             <div class="skill"><img src="./assets/icons/frondend/scrum.svg"><span>Scrum</span></div>
                             <div class="skill"><img src="./assets/icons/frondend/api.svg"><span>REST-API</span></div>
-                            <div class="skill"><img src="./assets/icons/frondend/test-automation.svg"><span>Material Design</span></div>
+                            <div class="skill"><img src="./assets/icons/frondend/test-automation.svg"><span>Material
+                                    Design</span></div>
                         </div>
 
                         <div class="skills-info">
@@ -196,185 +201,157 @@
 
                 <h2>Portfolio</h2>
                 <p class="projects-intro">
-                    Explore a selection of my work here. Interact with projects to see my skills in action.
+                    Explore a selection of my work here. Interact with <br>
+                    projects to see my skills in action.
                 </p>
 
                 <div class="projects-list">
 
                     <!-- PROJECT 1 -->
-                    <div class="project-item">
-                        <div class="hover-area"></div>
-
+                    <article class="project-item">
                         <div class="project-content">
 
-                            <div class="project-media">
+                            <div class="project-side project-media-side">
                                 <div class="project-image-wrapper">
-                                    <img src="project1.png" alt="Project 1">
-
-                                    <div class="project-hover">
-                                        <div class="hover-border"></div>
+                                    <img src="./assets/img/join.png" alt="Join project preview">
+                                    <div class="hover-border"></div>
+                                    <a href="https://deine-live-demo.com" class="hover-circle">
                                         <div class="hover-icon"></div>
-                                        <div class="hover-circle"></div>
+                                    </a>
+                                </div>
+                            </div>
 
-                                        <div class="hover-text">
-                                            <h3>Project 1</h3>
-                                            <p>Tech Stack</p>
-                                        </div>
+                            <div class="project-side project-info-side">
+                                <div class="project-header">
+                                    <span class="project-number right">01/04</span>
+                                </div>
 
-                                        <div class="hover-buttons">
-                                            <a href="#" class="btn primary">Live Test</a>
-                                            <a href="#" class="btn secondary">GitHub</a>
-                                        </div>
+                                <div class="project-details">
+                                    <h3>Join</h3>
+                                    <p class="tech"> TypeScript | HTML | CSS | Firebase</p>
+                                    <p class="desc">
+                                        Task manager inspired by the Kanban System. Create and organize tasks using
+                                        drag and drop functions, assign users and categories.
+                                    </p>
+
+                                    <div class="project-buttons">
+                                        <a href="#" class="btn secondary">Github</a>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="project-info">
-                                <span class="project-number">01/04</span>
-                                <h3>Project 1</h3>
-                                <p class="tech">Tech Stack</p>
-                                <p class="desc">Beschreibung…</p>
-
-                                <div class="project-buttons">
-                                    <a href="#" class="btn primary">Live Test</a>
-                                    <a href="#" class="btn secondary">GitHub</a>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- PROJECT 2 (REVERSE) -->
-                    <div class="project-item reverse">
-                        <div class="hover-area"></div>
-
+                    <!-- PROJECT 2 -->
+                    <article class="project-item reverse">
                         <div class="project-content">
 
-                            <div class="project-media">
-                                <div class="project-image-wrapper">
-                                    <img src="project2.png" alt="Project 2">
+                            <div class="project-side project-info-side">
+                                <div class="project-header">
+                                    <span class="project-number left">02/04</span>
+                                </div>
 
-                                    <div class="project-hover">
-                                        <div class="hover-border"></div>
-                                        <div class="hover-icon"></div>
-                                        <div class="hover-circle"></div>
+                                <div class="project-details">
+                                    <h3>Sharkie</h3>
+                                    <p class="tech">JavaScript | HTML | CSS</p>
+                                    <p class="desc">
+                                        A simple Jump-and-Run game based on an object-oriented approach.
+                                        Help Sharkie to find coins and poison bottles to fight against the killer whale.
+                                    </p>
 
-                                        <div class="hover-text">
-                                            <h3>Project 2</h3>
-                                            <p>Tech Stack</p>
-                                        </div>
-
-                                        <div class="hover-buttons">
-                                            <a href="#" class="btn primary">Live Test</a>
-                                            <a href="#" class="btn secondary">GitHub</a>
-                                        </div>
+                                    <div class="project-buttons">
+                                        <a href="#" class="btn secondary">Github</a>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="project-info">
-                                <span class="project-number">02/04</span>
-                                <h3>Project 2</h3>
-                                <p class="tech">Tech Stack</p>
-                                <p class="desc">Beschreibung…</p>
-
-                                <div class="project-buttons">
-                                    <a href="#" class="btn primary">Live Test</a>
-                                    <a href="#" class="btn secondary">GitHub</a>
+                            <div class="project-side project-media-side">
+                                <div class="project-image-wrapper">
+                                    <img src="./assets/img/startscreen_2.png" alt="Sharkie project preview">
+                                    <div class="hover-border"></div>
+                                    <a href="https://deine-live-demo.com" class="hover-circle">
+                                        <div class="hover-icon"></div>
+                                    </a>
                                 </div>
                             </div>
 
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- PROJECT 3 -->
-                    <div class="project-item">
-                        <div class="hover-area"></div>
-
+                    <!-- PROJECT 3: image left / text right -->
+                    <article class="project-item">
                         <div class="project-content">
 
-                            <div class="project-media">
+                            <div class="project-side project-media-side">
                                 <div class="project-image-wrapper">
-                                    <img src="project3.png" alt="Project 3">
-
-                                    <div class="project-hover">
-                                        <div class="hover-border"></div>
+                                    <img src="./assets/img/pokedex.png" alt="pokedex project preview">
+                                    <div class="hover-border"></div>
+                                    <a href="https://deine-live-demo.com" class="hover-circle">
                                         <div class="hover-icon"></div>
-                                        <div class="hover-circle"></div>
+                                    </a>
+                                </div>
+                            </div>
 
-                                        <div class="hover-text">
-                                            <h3>Project 3</h3>
-                                            <p>Tech Stack</p>
-                                        </div>
+                            <div class="project-side project-info-side">
+                                <div class="project-header">
+                                    <span class="project-number right">03/04</span>
+                                </div>
 
-                                        <div class="hover-buttons">
-                                            <a href="#" class="btn primary">Live Test</a>
-                                            <a href="#" class="btn secondary">GitHub</a>
-                                        </div>
+                                <div class="project-details">
+                                    <h3>Pokédex</h3>
+                                    <p class="tech"> JavaScript | HTML | CSS | Firebase</p>
+                                    <p class="desc">
+                                        Task manager inspired by the Kanban System. Create and organize tasks using
+                                        drag and drop functions, assign users and categories.
+                                    </p>
+
+                                    <div class="project-buttons">
+                                        <a href="#" class="btn secondary">Github</a>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="project-info">
-                                <span class="project-number">03/04</span>
-                                <h3>Project 3</h3>
-                                <p class="tech">Tech Stack</p>
-                                <p class="desc">Beschreibung…</p>
-
-                                <div class="project-buttons">
-                                    <a href="#" class="btn primary">Live Test</a>
-                                    <a href="#" class="btn secondary">GitHub</a>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- PROJECT 4 (REVERSE) -->
-                    <div class="project-item reverse">
-                        <div class="hover-area"></div>
-
+                    <!-- PROJECT 4 -->
+                    <article class="project-item reverse">
                         <div class="project-content">
 
-                            <div class="project-media">
-                                <div class="project-image-wrapper">
-                                    <img src="project4.png" alt="Project 4">
+                            <div class="project-side project-info-side">
+                                <div class="project-header">
+                                    <span class="project-number left">04/04</span>
+                                </div>
 
-                                    <div class="project-hover">
-                                        <div class="hover-border"></div>
-                                        <div class="hover-icon"></div>
-                                        <div class="hover-circle"></div>
+                                <div class="project-details">
+                                    <h3>Sharkie</h3>
+                                    <p class="tech">JavaScript | HTML | CSS</p>
+                                    <p class="desc">
+                                        A simple Jump-and-Run game based on an object-oriented approach.
+                                        Help Sharkie to find coins and poison bottles to fight against the killer whale.
+                                    </p>
 
-                                        <div class="hover-text">
-                                            <h3>Project 4</h3>
-                                            <p>Tech Stack</p>
-                                        </div>
-
-                                        <div class="hover-buttons">
-                                            <a href="#" class="btn primary">Live Test</a>
-                                            <a href="#" class="btn secondary">GitHub</a>
-                                        </div>
+                                    <div class="project-buttons">
+                                        <a href="#" class="btn secondary">Github</a>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="project-info">
-                                <span class="project-number">04/04</span>
-                                <h3>Project 4</h3>
-                                <p class="tech">Tech Stack</p>
-                                <p class="desc">Beschreibung…</p>
-
-                                <div class="project-buttons">
-                                    <a href="#" class="btn primary">Live Test</a>
-                                    <a href="#" class="btn secondary">GitHub</a>
+                            <div class="project-side project-media-side">
+                                <div class="project-image-wrapper">
+                                    <img src="./assets/img/startscreen_2.png" alt="Sharkie project preview">
+                                    <div class="hover-border"></div>
+                                    <a href="https://deine-live-demo.com" class="hover-circle">
+                                        <div class="hover-icon"></div>
+                                    </a>
                                 </div>
                             </div>
 
                         </div>
-                    </div>
+                    </article>
 
                 </div>
-
             </div>
         </section>
 

@@ -319,77 +319,6 @@ main {
     margin-bottom: 60px;
 }
 
-.skills-frame {
-    position: relative;
-}
-
-/* Linke Linie */
-.skills-frame::before {
-    content: "";
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    left: 0;
-    width: 4px;
-    background: black;
-}
-
-/* Rechte Linie */
-.skills-frame::after {
-    content: "";
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    right: 0;
-    width: 4px;
-    background: black;
-}
-
-/* Untere Linie */
-.skills-inner {
-    position: relative;
-    padding-bottom: 40px;
-}
-
-.skills-inner::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 4px;
-    background: black;
-}
-
-/* Obere Linie + Titel */
-.skills-title {
-    position: relative;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/* durchgehende obere Linie */
-.skills-title::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: black;
-}
-
-/* Text schneidet die Linie */
-.skills-title span {
-    position: relative;
-    padding: 0 20px;
-    background: #fff;
-    font-size: 78px;
-    font-weight: 600;
-    z-index: 2;
-    font-family: 'Syne', sans-serif;
-}
-
 .references-list {
     display: flex;
     gap: 30px;
@@ -397,7 +326,6 @@ main {
 
 .reference-item {
     flex: 1;
-    /* alle exakt gleich breit */
     border: 1px solid #ddd;
     padding: 30px;
     border-radius: 12px;
@@ -405,6 +333,7 @@ main {
     flex-direction: column;
 }
 
+/* footer */
 .footer {
     padding: 40px 0;
 }
