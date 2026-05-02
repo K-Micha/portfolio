@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Syne';
     src: url('/assets/fonts/syne.bold.ttf') format('truetype');
-    font-weight: 800 bold;
+    font-weight: 800 bolder;
 }
 
 @font-face {
@@ -319,18 +319,69 @@ main {
     margin-bottom: 60px;
 }
 
+.references {
+    text-align: center;
+    margin-top: 100px;
+}
+
 .references-list {
     display: flex;
-    gap: 30px;
+    gap: 24px;
 }
 
 .reference-item {
     flex: 1;
-    border: 1px solid #ddd;
-    padding: 30px;
-    border-radius: 12px;
+    min-height: 344px;
+    border: 4px solid black;
+    padding: 24px 16px 24px 16px;
     display: flex;
     flex-direction: column;
+}
+
+.references .container {
+    padding: 0 100px 0 100px;
+}
+
+.references .container h2 {
+    font-size: 78px;
+    letter-spacing: 1%;
+    font-weight: 800;
+}
+
+.reference-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.reference-header h3 {
+    padding-top: 18px;
+    font-size: 22px;
+}
+
+.references-intro {
+    margin: 52px 0 48px 0;
+}
+
+.references-intro p {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.reference-role{
+    font-size: 14px;
+}
+.reference-icon img {
+    height: 40px;
+    width: 40px;
+}
+
+.reference-text {
+    margin-top: 18px;
+    font-size: 18px;
+    text-align: start;
+    line-height: 120%;
 }
 
 /* footer */
