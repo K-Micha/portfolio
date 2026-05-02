@@ -18,7 +18,7 @@ function checkField(el) {
     if (stopWrongEmail(el)) return;
 
     setValidField(el);
-} 
+}
 
 function stopEmptyField(el) {
     if (!isEmpty(el)) return false;
@@ -52,7 +52,6 @@ function setValidField(el) {
     setState(el, true);
     updateButton();
 }
-
 
 function fillField(icon) {
     let field = icon.parentElement;
@@ -128,6 +127,15 @@ function showError(el, text) {
     error.textContent = text;
     error.classList.add("visible");
 
+    if (isEmpty(el)) {
+        startErrorTimer(el);
+    }
+}
+
+function startErrorTimer(el) {
+    let field = el.parentElement;
+    let error = field.nextElementSibling;
+
     errorTimer = setTimeout(function () {
         error.classList.remove("visible");
         error.textContent = "";
@@ -158,4 +166,60 @@ function updateButton() {
     if (!btn || !privacy) return;
 
     btn.disabled = !(isNameValid && isEmailValid && privacy.checked);
+}
+
+function handleSubmit(e) {
+    e.preventDefault();
+
+    let message = document.getElementById("formMessage");
+
+    if (!isNameValid || !isEmailValid || !isPrivacyChecked()) {
+        message.textContent = "Please fill all required fields and accept the privacy policy.";
+        return false;
+    }
+
+    message.textContent = "Your message has been sent successfully.";
+    resetContactForm();
+
+    return false;
+}
+
+function isPrivacyChecked() {
+    let privacy = document.getElementById("privacy-check");
+
+    if (!privacy) return false;
+
+    return privacy.checked;
+}
+
+function resetContactForm() {
+    resetInput("name");
+    resetInput("email");
+    resetInput("message");
+    resetPrivacy();
+
+    isNameValid = false;
+    isEmailValid = false;
+    isMessageValid = false;
+
+    updateButton();
+}
+
+function resetInput(id) {
+    let el = document.getElementById(id);
+    let field = el.parentElement;
+    let error = field.nextElementSibling;
+
+    el.value = "";
+    field.classList.remove("success", "error");
+    error.textContent = "";
+    error.classList.remove("visible");
+}
+
+function resetPrivacy() {
+    let privacy = document.getElementById("privacy-check");
+
+    if (!privacy) return;
+
+    privacy.checked = false;
 }

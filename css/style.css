@@ -513,8 +513,14 @@ h3 {
 
 .policy-link {
     display: inline-block;
-    color: #00d1b2;
+    color: rgba(0, 188, 143, 1);
     text-decoration: none;
     transition: 0.2s ease;
 }
 
+#formMessage{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 900;
+    color: rgba(0, 188, 143, 1);
+}

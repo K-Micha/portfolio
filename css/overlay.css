@@ -12,7 +12,7 @@
     top: 50%;
     width: 32px;
     height: 32px;
-    background: #00d1b2;
+    background: rgba(0, 188, 143, 1);
     border-radius: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.8);
@@ -26,7 +26,7 @@
     left: 50%;
     bottom: -2px;
     width: 0%;
-    background: #00d1b2;
+    background: rgba(0, 188, 143, 1);
     transform: translateX(-50%);
     transition: 0.2s ease;
 }

@@ -466,7 +466,7 @@
 
             </div>
             <!-- FORMULAR -->
-            <div class="contact-form">
+            <form class="contact-form" onsubmit="return handleSubmit(event)">
 
                 <div class="field">
                     <input type="text" id="name" placeholder=" " oninput="checkField(this)" onblur="checkField(this)"
@@ -498,76 +498,71 @@
                 </div>
                 <p class="error-text">Your message is required</p>
 
-                <!-- PRIVACY -->
+
                 <div class="contact-privacy">
                     <span class="checkbox-bg">
                         <input type="checkbox" id="privacy-check" onchange="updateButton()">
                     </span>
 
-                    <label for="privacy-check">
-                        I’ve read the
-                    </label>
+                    <label for="privacy-check">I’ve read the</label>
 
-                    <a href="#" class="policy-link">
-                        privacy policy
-                    </a>
+                    <a href="#" class="policy-link">privacy policy</a>
 
                     <label for="privacy-check">
                         and agree to the processing of my data as outlined.
                     </label>
                 </div>
 
-                <!-- Button -->
-                <button id="sendBtn" disabled>Send</button>
+                <button id="sendBtn" type="submit" disabled>Send</button>
 
-            </div>
+
+                <p id="formMessage"></p>
+
+            </form>
 
             <!-- Pfeil rechts -->
             <div class="contact-arrow">
                 <!-- Icon oder SVG -->
             </div>
 
+            <footer class="footer">
+                <div class="container">
 
-        </section>
+                    <div class="footer-content">
 
-        <footer class="footer">
-            <div class="container">
-
-                <div class="footer-content">
-
-                    <!-- LEFT -->
-                    <div class="footer-left">
-                        <div class="footer-logo">
-                            <img src="./assets/img/MK-white.svg" alt="MK Logo">
-                        </div>
-                        <p class="footer-copy">© Michael Kühn 2026</p>
-                    </div>
-
-                    <!-- RIGHT -->
-                    <div class="footer-right">
-
-                        <div class="footer-icons">
-                            <a href="https://github.com" class="footer-icon">
-                                <img src="./assets/icons/github.svg" alt="GitHub">
-                            </a>
-                            <a href="mailto:mail@example.com" class="footer-icon">
-                                <img src="./assets/icons/email.svg" alt="Email">
-                            </a>
-                            <a href="https://linkedin.com" class="footer-icon">
-                                <img src="./assets/icons/linkedin.svg" alt="LinkedIn">
-                            </a>
+                        <!-- LEFT -->
+                        <div class="footer-left">
+                            <div class="footer-logo">
+                                <img src="./assets/img/MK-white.svg" alt="MK Logo">
+                            </div>
+                            <p class="footer-copy">© Michael Kühn 2026</p>
                         </div>
 
+                        <!-- RIGHT -->
+                        <div class="footer-right">
+
+                            <div class="footer-icons">
+                                <a href="https://github.com" class="footer-icon">
+                                    <img src="./assets/icons/github.svg" alt="GitHub">
+                                </a>
+                                <a href="mailto:mail@example.com" class="footer-icon">
+                                    <img src="./assets/icons/email.svg" alt="Email">
+                                </a>
+                                <a href="https://linkedin.com" class="footer-icon">
+                                    <img src="./assets/icons/linkedin.svg" alt="LinkedIn">
+                                </a>
+                            </div>
+
+
+                        </div>
 
                     </div>
-
+                    <div class="legal">
+                        <a href="#" class="footer-legal">Legal notice</a>
+                    </div>
                 </div>
-                <div class="legal">
-                    <a href="#" class="footer-legal">Legal notice</a>
-                </div>
-            </div>
 
-        </footer>
+            </footer>
     </div>
 </body>
 
