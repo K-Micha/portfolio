@@ -2,7 +2,7 @@
   height: 300px;
   display: flex;
   position: relative;
-    max-width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
 }
@@ -126,72 +126,200 @@
 }
 
 .skills-frame {
-    position: relative;
+  position: relative;
 }
 
 /* Linke Linie */
 .skills-frame::before {
-    content: "";
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    left: 0;
-    width: 4px;
-    background: black;
+  content: "";
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: black;
 }
 
 /* Rechte Linie */
 .skills-frame::after {
-    content: "";
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    right: 0;
-    width: 4px;
-    background: black;
+  content: "";
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  width: 4px;
+  background: black;
 }
 
 /* Untere Linie */
 .skills-inner {
-    position: relative;
-    padding-bottom: 40px;
+  position: relative;
+  padding-bottom: 40px;
 }
 
 .skills-inner::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 4px;
-    background: black;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: black;
 }
 
 /* Obere Linie/Titel */
 .skills-title {
-    position: relative;
-    text-align: center;
-    margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 /* obere Linie */
 .skills-title::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: black;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: black;
 }
 
 /* Text/ Linie */
 .skills-title span {
-    position: relative;
-    padding: 0 20px;
-    background: #fff;
-    font-size: 78px;
-    font-weight: 600;
-    z-index: 2;
-    font-family: 'Syne', sans-serif;
+  position: relative;
+  padding: 0 20px;
+  background: #fff;
+  font-size: 78px;
+  font-weight: 600;
+  z-index: 2;
+  font-family: 'Syne', sans-serif;
 }
+
+.field {
+  position: relative;
+  background: #000;
+  padding: 14px 18px 10px;
+  margin-bottom: 6px;
+
+  border-bottom: 1px solid #444;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 1px solid transparent;
+
+  transition: border-color .2s ease;
+}
+
+.field:focus-within {
+  border-color: #fff;
+}
+
+.field.filled,
+.field.success {
+  border-color: #fff !important;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 0;
+  resize: none;
+}
+
+.field label {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 14px;
+  pointer-events: none;
+  transition: .2s ease;
+  background: #000;
+  padding: 0 6px;
+}
+
+
+.field:focus-within label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #fff;
+}
+
+.field.filled label,
+.field.success label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #fff;
+}
+
+.field.error label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 12px;
+}
+
+.error-icon,
+.success-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-icon {
+  background: #e63946;
+  color: #fff;
+}
+
+.success-icon {
+  background: #4caf50;
+  color: #fff;
+}
+
+.field.error .error-icon {
+  display: flex;
+}
+
+.field.success .success-icon {
+  display: flex;
+}
+
+.error-text {
+  color: #e63946 !important;
+  font-size: 12px;
+  margin: 4px 0 24px 0;
+  display: none;
+}
+
+.error-text.visible {
+  display: block;
+}
+
+.contact-privacy {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  color: white;
+  margin: 10px 0;
+}
+
+#message{
+  max-width: 90%;
+}
+

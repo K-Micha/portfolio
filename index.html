@@ -443,7 +443,9 @@
                 </div>
             </div>
         </div>
+    </main>
 
+    <div class="contact-footer-bg">
         <section class="contact">
 
             <!-- Overlay Background -->
@@ -462,71 +464,111 @@
                     Say hello! Let’s discuss your ideas and make it happen.
                 </p>
 
-                <!-- FORMULAR -->
-                <div class="contact-form">
+            </div>
+            <!-- FORMULAR -->
+            <div class="contact-form">
 
-                    <!-- Name -->
-                    <input type="text" placeholder="Your name" class="input-name">
-                    <span class="input-line"></span>
+                <div class="field">
+                    <input type="text" id="name" placeholder=" " oninput="checkField(this)" onblur="checkField(this)"
+                        ondblclick="triggerError(this)" />
+                    <label for="name">Your name</label>
 
-                    <!-- Email -->
-                    <input type="email" placeholder="Your email" class="input-email">
-                    <span class="input-line"></span>
+                    <span class="error-icon" onclick="fillField(this)">!</span>
+                    <span class="success-icon">✓</span>
+                </div>
+                <p class="error-text">Your name is required</p>
 
-                    <!-- Message -->
-                    <textarea placeholder="Your message" class="input-message"></textarea>
-                    <span class="input-line"></span>
+                <div class="field">
+                    <input type="email" id="email" placeholder=" " oninput="checkField(this)" onblur="checkField(this)"
+                        ondblclick="triggerError(this)" />
+                    <label for="email">Your email</label>
 
-                    <!-- Checkbox -->
-                    <div class="contact-privacy">
-                        <input type="checkbox" id="privacy-check">
-                        <label for="privacy-check">
-                            I’ve read the privacy policy and agree to the processing of my data as outlined.
-                        </label>
-                    </div>
+                    <span class="error-icon" onclick="fillField(this)">!</span>
+                    <span class="success-icon">✓</span>
+                </div>
+                <p class="error-text">Your email is required</p>
 
-                    <!-- Button -->
-                    <button class="contact-button">Send message</button>
+                <div class="field">
+                    <textarea id="message" placeholder=" " oninput="checkField(this)" onblur="checkField(this)"
+                        ondblclick="triggerError(this)"></textarea>
+                    <label for="message">Your message</label>
 
+                    <span class="error-icon" onclick="fillField(this)">!</span>
+                    <span class="success-icon">✓</span>
+                </div>
+                <p class="error-text">Your message is required</p>
+
+                <!-- PRIVACY -->
+                <div class="contact-privacy">
+                    <span class="checkbox-bg">
+                        <input type="checkbox" id="privacy-check" onchange="updateButton()">
+                    </span>
+
+                    <label for="privacy-check">
+                        I’ve read the
+                    </label>
+
+                    <a href="#" class="policy-link">
+                        privacy policy
+                    </a>
+
+                    <label for="privacy-check">
+                        and agree to the processing of my data as outlined.
+                    </label>
                 </div>
 
-                <!-- Pfeil rechts -->
-                <div class="contact-arrow">
-                    <!-- Icon oder SVG -->
-                </div>
+                <!-- Button -->
+                <button id="sendBtn" disabled>Send</button>
 
             </div>
+
+            <!-- Pfeil rechts -->
+            <div class="contact-arrow">
+                <!-- Icon oder SVG -->
+            </div>
+
+
         </section>
 
+        <footer class="footer">
+            <div class="container">
 
-    </main>
-    <footer class="footer">
-        <div class="container">
+                <div class="footer-content">
 
-            <div class="footer-content">
-
-                <!-- LEFT -->
-                <div class="footer-left">
-                    <div class="footer-logo">[SE]</div>
-                    <p class="footer-copy">© Stefan Engel 2022</p>
-                </div>
-
-                <!-- RIGHT -->
-                <div class="footer-right">
-
-                    <div class="footer-icons">
-                        <a href="#" class="footer-icon github"></a>
-                        <a href="#" class="footer-icon mail"></a>
-                        <a href="#" class="footer-icon linkedin"></a>
+                    <!-- LEFT -->
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <img src="./assets/img/MK-white.svg" alt="MK Logo">
+                        </div>
+                        <p class="footer-copy">© Michael Kühn 2026</p>
                     </div>
 
+                    <!-- RIGHT -->
+                    <div class="footer-right">
+
+                        <div class="footer-icons">
+                            <a href="https://github.com" class="footer-icon">
+                                <img src="./assets/icons/github.svg" alt="GitHub">
+                            </a>
+                            <a href="mailto:mail@example.com" class="footer-icon">
+                                <img src="./assets/icons/email.svg" alt="Email">
+                            </a>
+                            <a href="https://linkedin.com" class="footer-icon">
+                                <img src="./assets/icons/linkedin.svg" alt="LinkedIn">
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="legal">
                     <a href="#" class="footer-legal">Legal notice</a>
                 </div>
-
             </div>
 
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 
 </html>

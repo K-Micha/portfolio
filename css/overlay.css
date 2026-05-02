@@ -5,3 +5,51 @@
     pointer-events: none;
 }
 
+.checkbox-bg::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    background: #00d1b2;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: 0.2s ease;
+    z-index: 0;
+}
+
+.policy-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0%;
+    background: #00d1b2;
+    transform: translateX(-50%);
+    transition: 0.2s ease;
+}
+
+.contact-privacy:hover .checkbox-bg::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.contact-privacy:hover .policy-link {
+    transform: scale(1.1)
+}
+
+.contact-privacy:hover .policy-link::after {
+    width: 100%;
+}
+
+/* 🔥 HOVER → kompletter Rahmen */
+.field:hover {
+    border-color: #fff;
+}
+
+/* FOCUS bleibt wie gehabt */
+.field:focus-within {
+    border-color: #fff;
+}
