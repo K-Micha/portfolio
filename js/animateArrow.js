@@ -1,82 +1,142 @@
 /** 
-*Margin offset to delay arrow animation trigger. 
+* Margin offset for triggering arrow animation. 
 */
-const ARROW_MARGIN = '0px 0px -120px 0px';
+const ARROW_MARGIN = "0px 0px -120px 0px";
+
+/**
+* Stores last scroll position. 
+*/
+let lastScrollY = window.scrollY;
 
 /** 
-*Initializes all arrow dividers on the page. 
+* Initializes all arrow dividers on the page. 
 */
 function initArrowDividers() {
-  const dividers = document.getElementsByClassName('section-divider');
+    const dividers = document.getElementsByClassName("section-divider");
 
-  for (let i = 0; i < dividers.length; i++) {
-    initArrowDivider(dividers[i]);
-  }
+    for (let i = 0; i < dividers.length; i++) {
+        initArrowDivider(dividers[i]);
+    }
 }
 
 /** 
-*Sets up a single divider arrow animation. 
+* Sets up a single arrow divider. 
 */
 function initArrowDivider(divider) {
-  const parts = getArrowParts(divider);
-  if (!parts) return;
+    let parts = getArrowParts(divider);
+    if (!parts) return;
 
-  observeArrow(divider, parts);
+    observeArrow(divider, parts);
 }
 
 /** 
-*Returns arrow and tail elements from a divider. 
+* Gets arrow and tail elements from divider. 
 */
 function getArrowParts(divider) {
-  const arrow = getFirst(divider, 'arrow');
-  const tail = getFirst(divider, 'tail');
+    let arrow = getFirst(divider, "arrow");
+    let tail = getFirst(divider, "tail");
 
-  if (!arrow || !tail) return null;
+    if (!arrow || !tail) return null;
 
-  return { arrow, tail };
+    return { arrow: arrow, tail: tail };
 }
 
 /** 
-*Returns the first element by class name from a parent. 
+* Returns first element by class name. 
 */
 function getFirst(parent, className) {
-  return parent.getElementsByClassName(className)[0];
+    return parent.getElementsByClassName(className)[0];
 }
 
 /** 
-*Observes divider visibility to trigger animation once. 
+* Observes divider visibility for animation control. 
 */
 function observeArrow(divider, parts) {
-  let hasRun = false;
+    let observer = new IntersectionObserver(function (entries) {
+        handleArrow(entries[0], parts);
+        lastScrollY = window.scrollY;
+    }, getObserverOptions());
 
-  const observer = new IntersectionObserver(function (entries) {
-    hasRun = runArrowOnce(entries[0], hasRun, observer, divider, parts);
-  }, getObserverOptions());
-
-  observer.observe(divider);
+    observer.observe(divider);
 }
 
 /**
-*Runs arrow animation once when element is visible. 
+* Handles arrow animation logic based on scroll state. 
 */
-function runArrowOnce(entry, hasRun, observer, divider, parts) {
-  if (!entry.isIntersecting || hasRun) return hasRun;
+function handleArrow(entry, parts) {
+    if (!entry || !parts) return;
 
-  parts.arrow.classList.add('arrow-active');
-  parts.tail.classList.add('arrow-active');
-  observer.unobserve(divider);
+    if (shouldRunArrow(entry)) {
+        restartArrow(parts);
+        return;
+    }
 
-  return true;
+    if (shouldResetArrow(entry)) {
+        resetArrow(parts);
+    }
 }
 
 /** 
-*Returns IntersectionObserver configuration options. 
+* Checks if arrow should animate. 
+*/
+function shouldRunArrow(entry) {
+    return isScrollingDown() && entry.isIntersecting;
+}
+
+/** 
+* Checks if arrow should reset.
+*/
+function shouldResetArrow(entry) {
+    return !entry.isIntersecting && entry.boundingClientRect.top > 0;
+}
+
+/** 
+* Detects downward scrolling. 
+*/
+function isScrollingDown() {
+    return window.scrollY > lastScrollY;
+}
+
+/** 
+* Restarts arrow animation. 
+*/
+function restartArrow(parts) {
+    resetArrow(parts);
+    forceAnimationRestart(parts.arrow);
+    activateArrow(parts);
+}
+
+/** 
+* Forces CSS animation restart. 
+*/
+function forceAnimationRestart(el) {
+    void el.offsetWidth;
+}
+
+/** 
+* Activates arrow animation classes. 
+*/
+function activateArrow(parts) {
+    parts.arrow.classList.add("arrow-active");
+    parts.tail.classList.add("arrow-active");
+}
+
+/** 
+* Resets arrow animation state. 
+*/
+function resetArrow(parts) {
+    parts.arrow.classList.remove("arrow-active");
+    parts.tail.classList.remove("arrow-active");
+}
+
+/** 
+* Returns IntersectionObserver options.
 */
 function getObserverOptions() {
-  return {
-    threshold: 0,
-    rootMargin: ARROW_MARGIN
-  };
+    return {
+        threshold: 0,
+        rootMargin: ARROW_MARGIN
+    };
 }
 
 initArrowDividers();

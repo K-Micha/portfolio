@@ -1,10 +1,10 @@
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-    -webkit-text-fill-color: #fff;
-    -webkit-box-shadow: 0 0 0 1000px #000 inset;
-    box-shadow: 0 0 0 1000px #000 inset;
-    caret-color: #fff;
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px #000 inset;
+  box-shadow: 0 0 0 1000px #000 inset;
+  caret-color: rgba(255, 252, 243, 1);
 }
 
 @keyframes arrowMoveLeft {
@@ -46,7 +46,7 @@ input:-webkit-autofill:focus {
 }
 
 .section-divider {
-  height: 300px;
+  max-height: 300px;
   display: flex;
   position: relative;
   max-width: 1440px;
@@ -198,7 +198,7 @@ input:-webkit-autofill:focus {
 .skills-title span {
   position: relative;
   padding: 0 20px;
-  background: #fff;
+  background: rgba(255, 252, 243, 1);
   font-size: 78px;
   font-weight: 600;
   z-index: 2;
@@ -208,57 +208,69 @@ input:-webkit-autofill:focus {
 .field {
   position: relative;
   background: #000;
-  padding: 14px 18px 10px;
+  padding: 15px 25px 15px;
   margin-bottom: 6px;
-
-  border-bottom: 1px solid #444;
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-top: 1px solid transparent;
-
+  border-bottom: 2px solid rgba(255, 252, 243, 1);
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 2px solid transparent;
   transition: border-color .2s ease;
 }
 
 .field:focus-within {
-  border-color: #fff;
+  border-color: rgba(255, 252, 243, 1);
 }
 
 .field.filled,
 .field.success {
-  border-color: #fff !important;
+  border-color: rgba(255, 252, 243, 1) !important;
 }
 
 .field input,
 .field textarea {
-  width: 100%;
+  line-height: 50px;
   background: transparent;
   border: none;
   outline: none;
-  color: #fff;
-  font-size: 16px;
+  color: rgba(255, 252, 243, 1);
+  font-size: 28px;
   padding: 0;
-  resize: none;
+}
+
+#message {
+  height: 202px;
+  width: 100%;
+  padding-right: 10%;
+  box-sizing: border-box;
 }
 
 .field label {
   position: absolute;
   left: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #aaa;
-  font-size: 14px;
+  color: rgba(255, 252, 243, 1);
+  font-size: 16px;
   pointer-events: none;
   transition: .2s ease;
   background: #000;
   padding: 0 6px;
 }
 
+.field label[for="name"],
+.field label[for="email"] {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.field label[for="message"] {
+  top: 10px;
+  transform: none;
+}
 
 .field:focus-within label {
   top: 0;
   transform: translateY(-50%);
-  font-size: 12px;
-  color: #fff;
+  font-size: 16px;
+  color: rgba(255, 252, 243, 1);
 }
 
 .field.filled label,
@@ -266,21 +278,15 @@ input:-webkit-autofill:focus {
   top: 0;
   transform: translateY(-50%);
   font-size: 12px;
-  color: #fff;
-}
-
-.field.error label {
-  top: 0;
-  transform: translateY(-50%);
-  font-size: 12px;
+  color: rgba(255, 252, 243, 1);
 }
 
 .error-icon,
 .success-icon {
   position: absolute;
   right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 7.5px;
+  transform: none;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -292,13 +298,17 @@ input:-webkit-autofill:focus {
 }
 
 .error-icon {
-  background: #e63946;
-  color: #fff;
+  background: rgba(230, 28, 64, 1);
+  color: rgba(255, 252, 243, 1);
+  height: 25px;
+  width: 25px;
 }
 
 .success-icon {
   background: #4caf50;
-  color: #fff;
+  color: rgba(255, 252, 243, 1);
+  height: 25px;
+  width: 25px;
 }
 
 .field.error .error-icon {
@@ -310,10 +320,10 @@ input:-webkit-autofill:focus {
 }
 
 .error-text {
-  color: #e63946 !important;
+  color: rgba(230, 28, 64, 1) !important;
   font-size: 12px;
-  margin: 4px 0 24px 0;
   display: none;
+  margin-top: -12px;
 }
 
 .error-text.visible {
@@ -322,13 +332,68 @@ input:-webkit-autofill:focus {
 
 .contact-privacy {
   width: 100%;
+  height: 52px;
   display: flex;
   gap: 10px;
-  color: white;
+  color: rgba(255, 252, 243, 1);
   margin: 10px 0;
+  align-items: center;
 }
 
-#message{
-  max-width: 90%;
+.contact-privacy label,
+a {
+  font-size: 14px;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
 }
 
+.footer-arrow-wrapper {
+  position: absolute;
+  right: 70px;
+  width: 54px;
+  height: 76px;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.arrow-up {
+  bottom: 120%;
+  position: relative;
+  width: 40px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.arrow-up::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  width: 4px;
+  height: 52px;
+  background: rgba(255, 252, 243, 1);
+  transform: translateX(-50%);
+  transition: 0.2s ease;
+}
+
+.arrow-up::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border-left: 4px solid rgba(255, 252, 243, 1);
+  border-top: 4px solid rgba(255, 252, 243, 1);
+  transform: translateX(-50%) rotate(45deg);
+  transition: 0.2s ease;
+}
+
+.arrow-up:hover::before {
+  top: -13px;
+  height: 67px;
+}
+
+.arrow-up:hover::after {
+  top: -15px;
+}

@@ -37,7 +37,7 @@
 }
 
 .contact-privacy:hover .policy-link {
-    transform: scale(1.1)
+    transform: scale(1.15)
 }
 
 .contact-privacy:hover .policy-link::after {
@@ -46,10 +46,10 @@
 
 /* 🔥 HOVER → kompletter Rahmen */
 .field:hover {
-    border-color: #fff;
+    border-color: rgba(255, 252, 243, 1);
 }
 
 /* FOCUS bleibt wie gehabt */
 .field:focus-within {
-    border-color: #fff;
+    border-color: rgba(255, 252, 243, 1);
 }

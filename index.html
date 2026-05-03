@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/img/[MK].svg">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/overlay.css">
     <link rel="stylesheet" href="./css/projekt.css">
+    <script src="./js/contact.js" defer></script>
     <script src="./js/animateArrow.js" defer></script>
     <script src="./js/scrtips.js" defer></script>
     <script src="./js/animation.js" defer></script>
@@ -139,7 +141,7 @@
 
         </section>
         <div class="section-divider divider-right">
-            <div id="arrow-container" class="container">
+            <div id="arrow-container" onclick="scrollToSkills()" class="container">
                 <div class="arrow">
                     <div class="tail"></div>
                     <div class="head-v"></div>
@@ -187,7 +189,7 @@
         </section>
 
         <div class="section-divider divider-left">
-            <div id="arrow-container-left" class="container">
+            <div id="arrow-container-left" class="container" onclick="scrollToProjects()">
                 <div class="arrow">
                     <div class="tail"></div>
                     <div class="head-v"></div>
@@ -196,7 +198,7 @@
             </div>
         </div>
 
-        <section class="projects">
+        <section id="project" class="projects">
             <div class="container">
 
                 <h2>Portfolio</h2>
@@ -435,7 +437,7 @@
         </section>
 
         <div class="section-divider divider-right">
-            <div id="arrow-container-too" class="container">
+            <div id="arrow-container-too" onclick="scrollToContact()" class="container">
                 <div class="arrow">
                     <div class="tail"></div>
                     <div class="head-v"></div>
@@ -446,12 +448,12 @@
     </main>
 
     <div class="contact-footer-bg">
-        <section class="contact">
+        <section id="contact" class="contact">
 
             <!-- Overlay Background -->
             <div class="contact-overlay"></div>
 
-            <div class="container">
+            <div id="arrow-container-too" class="container">
 
                 <!-- Titel -->
                 <h2>Say Hi!</h2>
@@ -512,17 +514,19 @@
                         and agree to the processing of my data as outlined.
                     </label>
                 </div>
+                <p id="privacyError" class="error-text"></p>
 
-                <button id="sendBtn" type="submit" disabled>Send</button>
-
+                <div class="btn-container">
+                    <button id="sendBtn" type="submit" class="disabled-btn">Send message</button>
+                </div>
 
                 <p id="formMessage"></p>
 
             </form>
 
             <!-- Pfeil rechts -->
-            <div class="contact-arrow">
-                <!-- Icon oder SVG -->
+            <div class="footer-arrow-wrapper">
+                <div class="arrow-up" onclick="scrollToTop()"></div>
             </div>
 
             <footer class="footer">
