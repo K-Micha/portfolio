@@ -349,19 +349,20 @@ a {
 
 .footer-arrow-wrapper {
   position: absolute;
-  right: 70px;
-  width: 54px;
-  height: 76px;
+  right: max(40px, calc((100vw - 1240px) / 2));
+  bottom: 150px;
+  width: 30px;
+  height: 60px;
   z-index: 10;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .arrow-up {
-  bottom: 120%;
   position: relative;
   width: 40px;
   height: 60px;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .arrow-up::before {
