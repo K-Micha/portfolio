@@ -225,9 +225,24 @@ function handleContactResponse(result, message) {
     if (result.success) {
         showFeedback(message, t("form.success"), 6000);
         resetContactForm();
-    } else {
-        showFeedback(message, t("form.fail"), 6000);
+        return;
     }
+
+    handleContactError(result, message);
+}
+
+function handleContactError(result, message) {
+    if (result.error === "too_many_requests") {
+        showFeedback(message, "Too many messages. Try again later.", 6000);
+        return;
+    }
+
+    if (result.error === "blocked") {
+        showFeedback(message, "You are temporarily blocked.", 6000);
+        return;
+    }
+
+    showFeedback(message, t("form.fail"), 6000);
 }
 
 function getFormData() {

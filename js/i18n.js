@@ -188,7 +188,6 @@ function getTranslation(path) {
         .reduce((obj, key) => obj?.[key], translations[window.currentLang]);
 }
 
-/* Für andere JS-Dateien, z.B. contact.js */
 function t(path) {
     return getTranslation(path) || path;
 }
