@@ -29,9 +29,12 @@
             </div>
 
             <div class="container-right">
-                <div class="lang">
-                    <button>EN</button>
-                    <button>DE</button>
+                <div class="lang" onclick="toggleLangMenu()">
+                    <button id="activeLang" class="active">EN</button>
+
+                    <div id="langOptions" class="lang-options">
+                        <button onclick="setLang(event, 'de')">DE</button>
+                    </div>
                 </div>
 
                 <div id="menu" class="menu">
@@ -183,7 +186,7 @@
                             <img src="./assets/icons/frondend/continued-learning.svg">
                             <span>
                                 Don’t see the skill you need?
-                                 <span class="scroll-link" onclick="scrollToContact()">Contact me</span>,
+                                <span class="scroll-link" onclick="scrollToContact()">Contact me</span>,
                                 I’m always ready to learn!
                             </span>
                         </div>
@@ -310,8 +313,8 @@
                                     <h3>Pokédex</h3>
                                     <p class="tech"> JavaScript | HTML | CSS | API</p>
                                     <p class="desc">
-                                        A simple Pokédex application that fetches Pokémon data from a public API and
-                                        displays stats, types, and details in an interactive UI.
+                                        Based on the PokéAPI a simple library that provides and catalogues pokemon
+                                        information.
                                     </p>
 
                                     <div class="project-buttons">
@@ -336,8 +339,9 @@
                                     <h3>Delivery App</h3>
                                     <p class="tech">JavaScript | HTML | CSS</p>
                                     <p class="desc">
-                                        A simple restaurant ordering application that lets users browse menus,
-                                        add dishes to the cart, and simulate a complete checkout flow using local data.
+                                        A food delivery application inspired by Lieferando.
+                                        Users can browse restaurants, explore menus, and place orders through a simple
+                                        and intuitive interface.
                                     </p>
 
                                     <div class="project-buttons">
