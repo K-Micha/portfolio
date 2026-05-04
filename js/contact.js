@@ -190,7 +190,7 @@ function handlePrivacyError() {
 
 function handleFieldsError() {
     let error = document.getElementById("privacyError");
-    showFeedback(error, "Please fill all required fields.");
+    showFeedback(error, "Please fill all required fields.", 3000, "error");
 }
 
 async function sendContactForm() {
@@ -201,7 +201,7 @@ async function sendContactForm() {
         let result = await postContactData(data);
         handleContactResponse(result, message);
     } catch (error) {
-        showFeedback(message, t("form.network"), 6000);
+        showFeedback(message, t("form.network"), 6000, "error");
     }
 }
 
@@ -343,6 +343,7 @@ function canShowFeedback(el) {
 
 function startFeedback(el, text, type) {
     isFeedbackVisible = true;
+
     el.textContent = text;
     el.classList.remove("success", "error");
 
@@ -364,6 +365,6 @@ function scheduleFeedbackHide(el, duration) {
 
 function hideFeedback(el) {
     el.textContent = "";
-    el.classList.remove("visible");
+    el.classList.remove("visible", "success", "error");
     isFeedbackVisible = false;
 }

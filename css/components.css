@@ -81,14 +81,12 @@ input:-webkit-autofill:focus {
   }
 }
 
-#formMessage.error {
-    color: #ff4d4d;
-    font-weight: 500;
+#formMessage.visible.success {
+    color: #00c896;
 }
 
-#formMessage.success {
-    color: #00e0b8;
-    font-weight: 500;
+#formMessage.visible.error {
+    color: #ff4d4d;
 }
 
 .section-divider {
