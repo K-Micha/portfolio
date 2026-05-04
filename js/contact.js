@@ -223,7 +223,7 @@ function getJsonHeaders() {
 
 function handleContactResponse(result, message) {
     if (result.success) {
-        showFeedback(message, t("form.success"), 6000);
+        showFeedback(message, t("form.success"), 6000, "success");
         resetContactForm();
         return;
     }
@@ -233,16 +233,16 @@ function handleContactResponse(result, message) {
 
 function handleContactError(result, message) {
     if (result.error === "too_many_requests") {
-        showFeedback(message, "Too many messages. Try again later.", 6000);
+        showFeedback(message, "Too many messages. Try again later.", 6000, "error");
         return;
     }
 
     if (result.error === "blocked") {
-        showFeedback(message, "You are temporarily blocked.", 6000);
+        showFeedback(message, "You are temporarily blocked.", 6000, "error");
         return;
     }
 
-    showFeedback(message, t("form.fail"), 6000);
+    showFeedback(message, t("form.fail"), 6000, "error");
 }
 
 function getFormData() {
@@ -330,10 +330,10 @@ function hidePrivacyError(el) {
     isPrivacyErrorVisible = false;
 }
 
-function showFeedback(el, text, duration = 3000) {
+function showFeedback(el, text, duration = 3000, type = "success") {
     if (!canShowFeedback(el)) return;
 
-    startFeedback(el, text);
+    startFeedback(el, text, type);
     scheduleFeedbackHide(el, duration);
 }
 
@@ -341,12 +341,18 @@ function canShowFeedback(el) {
     return !isFeedbackVisible && !!el;
 }
 
-function startFeedback(el, text) {
+function startFeedback(el, text, type) {
     isFeedbackVisible = true;
-
     el.textContent = text;
-    el.classList.add("visible");
+    el.classList.remove("success", "error");
 
+    if (type === "error") {
+        el.classList.add("error");
+    } else {
+        el.classList.add("success");
+    }
+
+    el.classList.add("visible");
     clearTimeout(feedbackTimer);
 }
 

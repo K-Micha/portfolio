@@ -81,6 +81,16 @@ input:-webkit-autofill:focus {
   }
 }
 
+#formMessage.error {
+    color: #ff4d4d;
+    font-weight: 500;
+}
+
+#formMessage.success {
+    color: #00e0b8;
+    font-weight: 500;
+}
+
 .section-divider {
   max-height: 300px;
   display: flex;
