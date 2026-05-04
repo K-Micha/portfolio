@@ -245,7 +245,6 @@ main {
 .about .right img {
     height: auto;
     width: auto;
-    border-radius: 8px;
     margin-top: 80px;
 }
 
@@ -318,6 +317,17 @@ main {
     align-items: center;
     gap: 12px;
     margin-bottom: 60px;
+}
+
+.skills-info span, .a {
+    color: #000;
+    font-size: 22px;
+    font-family: 'Overpass', sans-serif;
+    text-decoration: none;
+}
+
+.scroll-link{
+    cursor: pointer;
 }
 
 .references {
@@ -394,7 +404,6 @@ main {
     height: 1061;
     position: relative;
     background: #000;
-    /* oder dein Gradient */
     clip-path: polygon(0 0, 100% 8vw, 100% 100%, 0 100%);
 }
 
@@ -421,6 +430,7 @@ main {
 }
 
 .contact-text {
+    font-size: 22px;
     padding-top: 26px;
     text-align: center;
 }

@@ -7,6 +7,42 @@ input:-webkit-autofill:focus {
   caret-color: rgba(255, 252, 243, 1);
 }
 
+@keyframes underlineMove {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+@keyframes iconOrbit {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translateX(22px) scale(0.75);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: translateX(-22px) scale(0.75);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translateX(-10px) scale(0.9);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
 @keyframes arrowMoveLeft {
   0% {
     right: 130px;
@@ -210,10 +246,10 @@ input:-webkit-autofill:focus {
   background: #000;
   padding: 15px 25px 15px;
   margin-bottom: 6px;
-  border-bottom: 2px solid rgba(255, 252, 243, 1);
-  border-left: 2px solid transparent;
-  border-right: 2px solid transparent;
-  border-top: 2px solid transparent;
+  border-bottom: 4px solid rgba(255, 252, 243, 1);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid transparent;
   transition: border-color .2s ease;
 }
 
@@ -340,7 +376,7 @@ input:-webkit-autofill:focus {
   align-items: center;
 }
 
-.contact-privacy label,
+.contact-form .contact-privacy label,
 a {
   font-size: 14px;
   font-family: 'Overpass', sans-serif;

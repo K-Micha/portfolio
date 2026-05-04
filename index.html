@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/overlay.css">
     <link rel="stylesheet" href="./css/projekt.css">
+    <link rel="stylesheet" href="/css/hover.css">
     <script src="./js/contact.js" defer></script>
     <script src="./js/animateArrow.js" defer></script>
     <script src="./js/scrtips.js" defer></script>
@@ -133,8 +134,9 @@
                     </div>
                 </div>
 
-                <div class="right">
+                <div class="right about-image-wrapper">
                     <img src="./assets/img/michael27.04.png" alt="Portrait">
+                    <div class="about-border"></div>
                 </div>
 
             </div>
@@ -179,7 +181,11 @@
 
                         <div class="skills-info">
                             <img src="./assets/icons/frondend/continued-learning.svg">
-                            <span>Don’t see the skill you need? Contact me, I’m always ready to learn!</span>
+                            <span>
+                                Don’t see the skill you need?
+                                 <span class="scroll-link" onclick="scrollToContact()">Contact me</span>,
+                                I’m always ready to learn!
+                            </span>
                         </div>
 
                     </div>
@@ -210,14 +216,14 @@
                 <div class="projects-list">
 
                     <!-- PROJECT 1 -->
-                    <article class="project-item">
+                    <article class="project-item project-left">
                         <div class="project-content">
 
                             <div class="project-side project-media-side">
-                                <div class="project-image-wrapper">
+                                <div class="project-image-wrapper  project-image-left">
                                     <img src="./assets/img/join.png" alt="Join project preview">
                                     <div class="hover-border"></div>
-                                    <a href="https://deine-live-demo.com" class="hover-circle">
+                                    <a href="https://deine-live-demo.com" target="_blank" class="hover-circle">
                                         <div class="hover-icon"></div>
                                     </a>
                                 </div>
@@ -246,7 +252,7 @@
                     </article>
 
                     <!-- PROJECT 2 -->
-                    <article class="project-item reverse">
+                    <article class="project-item project-right reverse">
                         <div class="project-content">
 
                             <div class="project-side project-info-side">
@@ -269,10 +275,10 @@
                             </div>
 
                             <div class="project-side project-media-side">
-                                <div class="project-image-wrapper">
+                                <div class="project-image-wrapper project-image-right">
                                     <img src="./assets/img/startscreen_2.png" alt="Sharkie project preview">
                                     <div class="hover-border"></div>
-                                    <a href="https://deine-live-demo.com" class="hover-circle">
+                                    <a href="https://deine-live-demo.com" target="_blank" class="hover-circle">
                                         <div class="hover-icon"></div>
                                     </a>
                                 </div>
@@ -282,14 +288,14 @@
                     </article>
 
                     <!-- PROJECT 3: image left / text right -->
-                    <article class="project-item">
+                    <article class="project-item project-left">
                         <div class="project-content">
 
                             <div class="project-side project-media-side">
-                                <div class="project-image-wrapper">
+                                <div class="project-image-wrapper  project-image-left">
                                     <img src="./assets/img/pokedex.png" alt="pokedex project preview">
                                     <div class="hover-border"></div>
-                                    <a href="https://deine-live-demo.com" class="hover-circle">
+                                    <a href="https://deine-live-demo.com" target="_blank" class="hover-circle">
                                         <div class="hover-icon"></div>
                                     </a>
                                 </div>
@@ -318,7 +324,7 @@
                     </article>
 
                     <!-- PROJECT 4 -->
-                    <article class="project-item reverse">
+                    <article class="project-item project-right reverse">
                         <div class="project-content">
 
                             <div class="project-side project-info-side">
@@ -341,10 +347,10 @@
                             </div>
 
                             <div class="project-side project-media-side">
-                                <div class="project-image-wrapper">
+                                <div class="project-image-wrapper project-image-right">
                                     <img src="./assets/img/bestell-app.png" alt="Sharkie project preview">
                                     <div class="hover-border"></div>
-                                    <a href="https://deine-live-demo.com" class="hover-circle">
+                                    <a href="https://deine-live-demo.com" target="_blank" class="hover-circle">
                                         <div class="hover-icon"></div>
                                     </a>
                                 </div>
@@ -562,7 +568,7 @@
 
                     </div>
                     <div class="legal">
-                        <a href="#" class="footer-legal">Legal notice</a>
+                        <a href="#" class="footer-legal scroll-link">Legal notice</a>
                     </div>
                 </div>
 

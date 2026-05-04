@@ -140,3 +140,27 @@ function getObserverOptions() {
 }
 
 initArrowDividers();
+
+let projectHoverTimers = new Map();
+
+function initProjectHover() {
+    document.querySelectorAll('.project-item').forEach(addProjectHoverEvents);
+}
+
+function addProjectHoverEvents(item) {
+    item.addEventListener('mouseenter', () => startProjectHover(item));
+    item.addEventListener('mouseleave', () => stopProjectHover(item));
+}
+
+function startProjectHover(item) {
+    item.classList.add('is-hover-ready');
+    const timer = setTimeout(() => item.classList.add('is-hovered'), 300);
+    projectHoverTimers.set(item, timer);
+}
+
+function stopProjectHover(item) {
+    clearTimeout(projectHoverTimers.get(item));
+    item.classList.remove('is-hover-ready', 'is-hovered');
+}
+
+initProjectHover();
