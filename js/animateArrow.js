@@ -139,28 +139,35 @@ function getObserverOptions() {
     };
 }
 
+/** Initializes arrow divider animations on page load. */
 initArrowDividers();
 
+/** Stores hover timers for each project item. */
 let projectHoverTimers = new Map();
 
+/** Initializes hover interactions for all project items. */
 function initProjectHover() {
     document.querySelectorAll('.project-item').forEach(addProjectHoverEvents);
 }
 
+/** Adds mouseenter and mouseleave events to a project item. */
 function addProjectHoverEvents(item) {
     item.addEventListener('mouseenter', () => startProjectHover(item));
     item.addEventListener('mouseleave', () => stopProjectHover(item));
 }
 
+/** Starts the delayed hover animation for a project item. */
 function startProjectHover(item) {
     item.classList.add('is-hover-ready');
     const timer = setTimeout(() => item.classList.add('is-hovered'), 300);
     projectHoverTimers.set(item, timer);
 }
 
+/** Stops the hover animation and clears the hover timer. */
 function stopProjectHover(item) {
     clearTimeout(projectHoverTimers.get(item));
     item.classList.remove('is-hover-ready', 'is-hovered');
 }
 
+/** Initializes hover logic on page load. */
 initProjectHover();

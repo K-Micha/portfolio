@@ -1,3 +1,4 @@
+/** Current language loaded from localStorage or defaulting to English. */
 window.currentLang = localStorage.getItem("lang") || "en";
 
 const translations = {
@@ -156,10 +157,12 @@ const translations = {
     }
 };
 
+/** Toggles the language dropdown menu. */
 function toggleLangMenu() {
     document.querySelector(".lang").classList.toggle("open");
 }
 
+/** Sets the active language and updates the UI. */
 function setLang(event, lang) {
     if (event) event.stopPropagation();
 
@@ -171,10 +174,12 @@ function setLang(event, lang) {
     document.querySelector(".lang").classList.remove("open");
 }
 
+/** Applies translations to all elements with data-i18n attributes. */
 function renderTranslations() {
     document.querySelectorAll("[data-i18n]").forEach(updateText);
 }
 
+/** Updates a single element's text based on its translation key. */
 function updateText(element) {
     let key = element.dataset.i18n;
     let text = getTranslation(key);
@@ -182,32 +187,34 @@ function updateText(element) {
     if (text) element.innerText = text;
 }
 
+/** Retrieves a translation value using a dot‑notation path. */
 function getTranslation(path) {
     return path
         .split(".")
         .reduce((obj, key) => obj?.[key], translations[window.currentLang]);
 }
 
+/** Shortcut for retrieving translations with fallback to key. */
 function t(path) {
     return getTranslation(path) || path;
 }
 
+/** Updates the language switcher UI to reflect the active language. */
 function updateLangSwitch() {
     let active = document.getElementById("activeLang");
     let options = document.getElementById("langOptions");
 
     active.textContent = window.currentLang.toUpperCase();
-
     let other = window.currentLang === "en" ? "de" : "en";
 
     options.innerHTML =
         `<button onclick="setLang(event, '${other}')">
             ${other.toUpperCase()}
         </button>`;
-
     active.classList.add("active");
 }
 
+/** Loads the saved language and initializes translations. */
 function loadLang() {
     let saved = localStorage.getItem("lang");
 
@@ -217,4 +224,5 @@ function loadLang() {
     updateLangSwitch();
 }
 
+/** Initializes language system on DOM ready. */
 document.addEventListener("DOMContentLoaded", loadLang);
