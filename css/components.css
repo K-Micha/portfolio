@@ -8,13 +8,12 @@ input:-webkit-autofill:focus {
 }
 
 @keyframes underlineMove {
-  0% {
-    left: 0;
-  }
-
-  100% {
-    left: 50%;
-  }
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 50%;
+    }
 }
 
 @keyframes iconOrbit {
@@ -83,11 +82,11 @@ input:-webkit-autofill:focus {
 }
 
 #formMessage.visible.success {
-  color: #00c896;
+    color: #00c896;
 }
 
 #formMessage.visible.error {
-  color: #ff4d4d;
+    color: #ff4d4d;
 }
 
 .section-divider {
@@ -311,15 +310,9 @@ input:-webkit-autofill:focus {
   transform: none;
 }
 
-.field:focus-within label,
-.field.force-label label {
-  top: 0;
-  transform: translateY(-50%);
-  font-size: 12px;
-  color: #fff;
-}
-
-  {
+.field:focus-within label, 
+ .field.force-label label
+{
   top: 0;
   transform: translateY(-50%);
   font-size: 16px;
@@ -336,6 +329,7 @@ input:-webkit-autofill:focus {
 
 .error-icon,
 .success-icon {
+  cursor: pointer;
   position: absolute;
   right: 12px;
   top: 7.5px;
