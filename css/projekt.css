@@ -28,6 +28,28 @@
     height: 100%;
 }
 
+.project-details {
+    opacity: 0;
+    transform: translateX(-35px);
+
+    transition:
+        opacity 0.18s ease-out,
+        transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-item.is-hovered .project-details {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.project-item:has(.project-image-right) .project-details {
+    transform: translateX(35px);
+}
+
+.project-item.is-hovered:has(.project-image-right) .project-details {
+    transform: translateX(0);
+}
+
 .project-side .project-details {
     display: flex;
     flex-direction: column;
@@ -47,7 +69,7 @@
 .projects-list {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 87px;
 }
 
 .project-details h3 {
@@ -117,4 +139,215 @@
 .project-content:hover .hover-border,
 .project-content:hover .hover-circle {
     opacity: 1;
+}
+
+.project-image-wrapper img {
+    filter: grayscale(100%) brightness(0.9);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.project-image-wrapper:hover img {
+    filter: grayscale(0%) brightness(1);
+}
+
+.project-image-wrapper {
+    position: relative;
+    width: 620px;
+    height: 393px;
+    --border-offset: 20px;
+}
+
+.project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.9);
+    transition: filter 0.4s ease;
+}
+
+.project-item.is-hovered .project-image-wrapper img {
+    filter: grayscale(0%) brightness(1);
+}
+
+.hover-border {
+    position: absolute;
+    top: var(--border-offset);
+    width: 620px;
+    height: 393px;
+    border: 4px solid #000;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hover-circle {
+    pointer-events: auto;
+    cursor: pointer;
+    position: absolute;
+    top: calc(var(--border-offset) + 50%);
+    width: 48px;
+    height: 48px;
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    z-index: 3;
+    transition:
+        width 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: width, height;
+}
+
+.hover-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    transform: rotate(0deg);
+    transform-origin: center;
+    z-index: 4;
+    transition:
+        width 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
+
+    will-change: width, height, transform;
+}
+
+.hover-icon::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    width: 4px;
+    height: 31px;
+    background: #fffcf3;
+    transform: translateX(-50%);
+    transition:
+
+        width 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: width, height;
+}
+
+.hover-icon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 20px;
+    height: 20px;
+    border-right: 4px solid rgba(255, 252, 243, 1);
+    border-bottom: 4px solid rgba(255, 252, 243, 1);
+    transform: translateX(-50%) rotate(45deg);
+
+    transition:
+
+        width 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        bottom 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        border-width 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: width, height, bottom, border-width;
+}
+
+.project-item.is-hovered .hover-circle {
+    width: 75.7px;
+    height: 75.7px;
+}
+
+.project-item.is-hovered .hover-icon {
+    width: 62px;
+    height: 62px;
+    transform: rotate(-135deg);
+}
+
+.project-item.is-hovered .hover-icon::before {
+    width: 5px;
+    height: 48px;
+}
+
+.project-item.is-hovered .hover-icon::after {
+    bottom: 6px;
+    width: 30px;
+    height: 30px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+}
+
+.project-image-left .hover-border {
+    left: var(--border-offset);
+}
+
+.project-image-left .hover-circle {
+    left: calc(var(--border-offset) + 100%);
+    transform: translate(-50%, -50%);
+}
+
+.project-image-right .hover-border {
+    right: var(--border-offset);
+    left: auto;
+}
+
+.project-image-right .hover-circle {
+    right: calc(var(--border-offset) + 100%);
+    left: auto;
+    transform: translate(50%, -50%);
+}
+
+.hover-circle:hover::after {
+    content: "Open Demo";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 1;
+    color: #000;
+    background-color: rgba(255, 252, 243, 1);
+    border: 1px solid black;
+    white-space: nowrap;
+}
+.about-image-wrapper {
+    position: relative;
+    width: 400px;
+    height: auto;
+}
+
+.about-image-wrapper img {
+    max-width: 400px;
+    display: block;
+}
+
+.about-border {
+    opacity: 0;
+    position: absolute;
+    margin-top: 80px;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 4px solid black;
+    z-index: 1;
+    pointer-events: none;
+}
+.scroll-link {
+    position: relative;
+    display: inline-block;
+}
+
+.scroll-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: #00b894;
+    opacity: 0;
 }
