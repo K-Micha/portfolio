@@ -116,6 +116,7 @@ main {
 }
 
 .lang button {
+    font-weight: 700;
     background: none;
     border: 2px solid transparent;
     font-size: 24px;
