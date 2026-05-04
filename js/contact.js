@@ -198,25 +198,35 @@ async function sendContactForm() {
     let data = getFormData();
 
     try {
-        let response = await fetch("contact.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-
-        let result = await response.json();
-
-        if (result.success) {
-            showFeedback(message, t("form.fail"), 6000);
-            resetContactForm();
-        } else {
-            showFeedback(message, "Sending failed. Please use the email link below.", 6000);
-        }
-
+        let result = await postContactData(data);
+        handleContactResponse(result, message);
     } catch (error) {
-        showFeedback(message, "Network error. Please use the email link below.", 6000);
+        showFeedback(message, t("form.network"), 6000);
+    }
+}
+
+async function postContactData(data) {
+    let response = await fetch("contact.php", {
+        method: "POST",
+        headers: getJsonHeaders(),
+        body: JSON.stringify(data)
+    });
+
+    return response.json();
+}
+
+function getJsonHeaders() {
+    return {
+        "Content-Type": "application/json"
+    };
+}
+
+function handleContactResponse(result, message) {
+    if (result.success) {
+        showFeedback(message, t("form.success"), 6000);
+        resetContactForm();
+    } else {
+        showFeedback(message, t("form.fail"), 6000);
     }
 }
 
