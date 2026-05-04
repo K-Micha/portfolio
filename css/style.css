@@ -271,6 +271,11 @@ main {
     margin-top: 80px;
 }
 
+.about-image-wrapper img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 .about img {
     max-width: 400px;
 }

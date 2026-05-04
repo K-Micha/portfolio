@@ -1,5 +1,7 @@
 let currentLang = "en";
 
+document.getElementById("about-img").oncontextmenu = () => false;
+
 function scrollToSkills() {
     let target = document.getElementById("skills");
     if (!target) return;
@@ -28,3 +30,4 @@ function scrollToTop() {
 function toggleLangMenu() {
     document.querySelector(".lang").classList.toggle("open");
 }
+
