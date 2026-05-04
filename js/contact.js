@@ -13,7 +13,6 @@ function checkField(el) {
     resetField(el);
 
     if (stopEmptyField(el)) return;
-    if (stopBlockedValue(el)) return;
     if (stopWrongEmail(el)) return;
 
     setValidField(el);
@@ -23,15 +22,6 @@ function stopEmptyField(el) {
     if (!isEmpty(el)) return false;
 
     setInvalid(el);
-    updateButton();
-    return true;
-}
-
-function stopBlockedValue(el) {
-    if (!isBlockedValue(el)) return false;
-
-    setSuccess(el);
-    setState(el, false);
     updateButton();
     return true;
 }
@@ -58,12 +48,26 @@ function fillField(icon) {
 
     if (!el) return;
 
-    if (isEmailField(el)) el.value = "info@MaxMustermann.de";
-    else if (isTextarea(el)) el.value = "Hi Michael! I want to work with you on a new project.";
-    else el.value = "Max Mustermann";
+    field.classList.add("force-label"); 
 
-    checkField(el);
+    if (isEmailField(el)) return fillEmailPlaceholder(el);
+    if (isTextarea(el)) return fillMessagePlaceholder(el);
+
+    fillNamePlaceholder(el);
 }
+
+function fillNamePlaceholder(el) {
+    el.placeholder = "Max Mustermann";
+}
+
+function fillEmailPlaceholder(el) {
+    el.placeholder = "info@MaxMustermann.de";
+}
+
+function fillMessagePlaceholder(el) {
+    el.placeholder = "Hi Michael! I want to work with you on a new project.";
+}
+
 
 function triggerError(el) {
     resetField(el);
@@ -95,13 +99,6 @@ function isTextarea(el) {
 
 function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
-}
-
-function isBlockedValue(el) {
-    let value = el.value.trim().toLowerCase();
-
-    return value === "max mustermann" ||
-        value === "info@maxmustermann.de";
 }
 
 function setInvalid(el) {

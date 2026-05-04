@@ -8,6 +8,14 @@ const frames = [
   '/assets/animation/arrow-icons/Frame0.png'
 ];
 
+// Preload all frames once
+const preloaded = [];
+frames.forEach(src => {
+  const img = new Image();
+  img.src = src;
+  preloaded.push(img);
+});
+
 const arrow = document.getElementById('scroll-arrow');
 
 let progress = 0;
@@ -21,7 +29,7 @@ const step = 2;
 */
 function updateAnimation() {
   const index = Math.floor(progress / (100 / frames.length));
-  arrow.src = frames[index];
+  arrow.src = preloaded[index].src; // ← aus Cache
 }
 
 /**
@@ -49,6 +57,7 @@ function tick() {
   updateAnimation();
   advanceProgress();
 }
+
 
 setInterval(tick, speed);
 

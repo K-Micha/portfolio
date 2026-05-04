@@ -190,7 +190,7 @@ main {
 .scroll {
     position: absolute;
     right: 40px;
-    bottom: 40px;
+    bottom: 0px;
     transform: translateX(0);
 }
 
