@@ -42,12 +42,7 @@ const translations = {
             delivery: {
                 title: "Delivery App",
                 desc: "A food delivery application inspired by Lieferando. Users can browse restaurants, explore menus, and place orders through a simple interface."
-            },
-            form: {
-                success: "Your message has been sent successfully.",
-                fail: "Sending failed. Please use the email link below.",
-                network: "Network error. Please use the email link below."
-            },
+            }
         },
         references: {
             title: "References",
@@ -73,7 +68,10 @@ const translations = {
             privacyStart: "I have read the",
             privacyPolicy: "privacy policy",
             privacyEnd: "and agree to the processing of my data.",
-            send: "Send message"
+            send: "Send message",
+            success: "Your message has been sent successfully.",
+            fail: "Sending failed. Please use the email link below.",
+            network: "Network error. Please use the email link below."
         },
         footer: {
             legal: "Legal notice"
@@ -121,12 +119,7 @@ const translations = {
             delivery: {
                 title: "Delivery App",
                 desc: "Eine Food-Delivery-Anwendung inspiriert von Lieferando. Nutzer können Restaurants ansehen, Menüs durchsuchen und Bestellungen über eine einfache Oberfläche aufgeben."
-            },
-            form: {
-                success: "Deine Nachricht wurde erfolgreich gesendet.",
-                fail: "Senden fehlgeschlagen. Bitte nutze die E-Mail unten.",
-                network: "Netzwerkfehler. Bitte nutze die E-Mail unten."
-            },
+            }
         },
         references: {
             title: "Referenzen",
@@ -152,7 +145,10 @@ const translations = {
             privacyStart: "Ich habe die",
             privacyPolicy: "Datenschutzerklärung",
             privacyEnd: "gelesen und stimme der Verarbeitung meiner Daten zu.",
-            send: "Nachricht senden"
+            send: "Nachricht senden",
+            success: "Deine Nachricht wurde erfolgreich gesendet.",
+            fail: "Senden fehlgeschlagen. Bitte nutze die E-Mail unten.",
+            network: "Netzwerkfehler. Bitte nutze die E-Mail unten."
         },
         footer: {
             legal: "Impressum"
