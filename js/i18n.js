@@ -42,7 +42,12 @@ const translations = {
             delivery: {
                 title: "Delivery App",
                 desc: "A food delivery application inspired by Lieferando. Users can browse restaurants, explore menus, and place orders through a simple interface."
-            }
+            },
+            form: {
+                success: "Your message has been sent successfully.",
+                fail: "Sending failed. Please use the email link below.",
+                network: "Network error. Please use the email link below."
+            },
         },
         references: {
             title: "References",
@@ -116,7 +121,12 @@ const translations = {
             delivery: {
                 title: "Delivery App",
                 desc: "Eine Food-Delivery-Anwendung inspiriert von Lieferando. Nutzer können Restaurants ansehen, Menüs durchsuchen und Bestellungen über eine einfache Oberfläche aufgeben."
-            }
+            },
+            form: {
+                success: "Deine Nachricht wurde erfolgreich gesendet.",
+                fail: "Senden fehlgeschlagen. Bitte nutze die E-Mail unten.",
+                network: "Netzwerkfehler. Bitte nutze die E-Mail unten."
+            },
         },
         references: {
             title: "Referenzen",
@@ -157,7 +167,7 @@ function toggleLangMenu() {
 function setLang(event, lang) {
     if (event) event.stopPropagation();
 
-    currentLang = lang;
+    window.currentLang = lang;
     localStorage.setItem("lang", lang);
 
     renderTranslations();
@@ -177,16 +187,23 @@ function updateText(element) {
 }
 
 function getTranslation(path) {
-    return path.split(".").reduce((obj, key) => obj?.[key], translations[currentLang]);
+    return path
+        .split(".")
+        .reduce((obj, key) => obj?.[key], translations[window.currentLang]);
+}
+
+/* Für andere JS-Dateien, z.B. contact.js */
+function t(path) {
+    return getTranslation(path) || path;
 }
 
 function updateLangSwitch() {
     let active = document.getElementById("activeLang");
     let options = document.getElementById("langOptions");
 
-    active.textContent = currentLang.toUpperCase();
+    active.textContent = window.currentLang.toUpperCase();
 
-    let other = currentLang === "en" ? "de" : "en";
+    let other = window.currentLang === "en" ? "de" : "en";
 
     options.innerHTML =
         `<button onclick="setLang(event, '${other}')">
@@ -198,7 +215,8 @@ function updateLangSwitch() {
 
 function loadLang() {
     let saved = localStorage.getItem("lang");
-    if (saved) currentLang = saved;
+
+    if (saved) window.currentLang = saved;
 
     renderTranslations();
     updateLangSwitch();

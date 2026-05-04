@@ -3,9 +3,11 @@ let isEmailValid = false;
 let isMessageValid = false;
 let isPrivacyErrorVisible = false;
 let isFeedbackVisible = false;
+
 let feedbackTimer;
-let errorTimer;
 let privacyTimer;
+
+window.formStartedAt = Date.now();
 
 function checkField(el) {
     resetField(el);
@@ -56,13 +58,9 @@ function fillField(icon) {
 
     if (!el) return;
 
-    if (isEmailField(el)) {
-        el.value = "info@MaxMustermann.de";
-    } else if (isTextarea(el)) {
-        el.value = "Hi Michael! I want to work with you in a new project, when do you have time for a meeting?";
-    } else {
-        el.value = "Max Mustermann";
-    }
+    if (isEmailField(el)) el.value = "info@MaxMustermann.de";
+    else if (isTextarea(el)) el.value = "Hi Michael! I want to work with you on a new project.";
+    else el.value = "Max Mustermann";
 
     checkField(el);
 }
@@ -124,9 +122,7 @@ function showError(el, text) {
     error.textContent = text;
     error.classList.add("visible");
 
-    if (isEmpty(el)) {
-        startErrorTimer(el);
-    }
+    if (isEmpty(el)) startErrorTimer(el);
 }
 
 function startErrorTimer(el) {
@@ -163,7 +159,7 @@ function updateButton() {
 
     if (!btn) return;
 
-    let active = isNameValid && isEmailValid && isPrivacyChecked();
+    let active = isNameValid && isEmailValid && isMessageValid && isPrivacyChecked();
 
     if (active) {
         btn.classList.add("active-btn");
@@ -174,18 +170,18 @@ function updateButton() {
     }
 }
 
-function handleSubmit(e) {
+async function handleSubmit(e) {
     e.preventDefault();
 
     if (!isPrivacyChecked()) return handlePrivacyError();
     if (!isFormValid()) return handleFieldsError();
 
-    handleSuccess();
+    await sendContactForm();
     return false;
 }
 
 function isFormValid() {
-    return isNameValid && isEmailValid;
+    return isNameValid && isEmailValid && isMessageValid;
 }
 
 function handlePrivacyError() {
@@ -193,12 +189,45 @@ function handlePrivacyError() {
 }
 
 function handleFieldsError() {
-    showFormError();
+    let error = document.getElementById("privacyError");
+    showFeedback(error, "Please fill all required fields.");
 }
 
-function handleSuccess() {
-    showSuccessMessage();
-    resetContactForm();
+async function sendContactForm() {
+    let message = document.getElementById("formMessage");
+    let data = getFormData();
+
+    try {
+        let response = await fetch("contact.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        let result = await response.json();
+
+        if (result.success) {
+            showFeedback(message, t("form.fail"), 6000);
+            resetContactForm();
+        } else {
+            showFeedback(message, "Sending failed. Please use the email link below.", 6000);
+        }
+
+    } catch (error) {
+        showFeedback(message, "Network error. Please use the email link below.", 6000);
+    }
+}
+
+function getFormData() {
+    return {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        message: document.getElementById("message").value.trim(),
+        website: "",
+        formStartedAt: window.formStartedAt || Date.now()
+    };
 }
 
 function isPrivacyChecked() {
@@ -218,6 +247,7 @@ function resetContactForm() {
     isNameValid = false;
     isEmailValid = false;
     isMessageValid = false;
+    window.formStartedAt = Date.now();
 
     updateButton();
 }
@@ -239,6 +269,15 @@ function resetPrivacy() {
     if (!privacy) return;
 
     privacy.checked = false;
+}
+
+function showPrivacyError() {
+    let error = document.getElementById("privacyError");
+
+    if (!canShowPrivacy(error)) return;
+
+    startPrivacy(error, "Please accept the privacy policy.");
+    schedulePrivacyHide(error);
 }
 
 function canShowPrivacy(el) {
@@ -266,19 +305,11 @@ function hidePrivacyError(el) {
     isPrivacyErrorVisible = false;
 }
 
-function showPrivacyError() {
-    let error = document.getElementById("privacyError");
+function showFeedback(el, text, duration = 3000) {
+    if (!canShowFeedback(el)) return;
 
-    if (!canShowPrivacy(error)) return;
-
-    startPrivacy(error, "Please accept the privacy policy.");
-    schedulePrivacyHide(error);
-}
-
-function hidePrivacyError(error) {
-    error.textContent = "";
-    error.classList.remove("visible");
-    isPrivacyErrorVisible = false;
+    startFeedback(el, text);
+    scheduleFeedbackHide(el, duration);
 }
 
 function canShowFeedback(el) {
@@ -294,67 +325,13 @@ function startFeedback(el, text) {
     clearTimeout(feedbackTimer);
 }
 
-function scheduleHide(el, duration) {
+function scheduleFeedbackHide(el, duration) {
     feedbackTimer = setTimeout(function () {
         hideFeedback(el);
     }, duration);
 }
 
 function hideFeedback(el) {
-    el.textContent = "";
-    el.classList.remove("visible");
-    isFeedbackVisible = false;
-}
-
-function showFeedback(el, text, duration = 3000) {
-    if (!canShowFeedback(el)) return;
-
-    startFeedback(el, text);
-    scheduleHide(el, duration);
-}
-
-function hideFeedback(el) {
-    el.textContent = "";
-    el.classList.remove("visible");
-    isFeedbackVisible = false;
-}
-
-function showFormError() {
-    let error = document.getElementById("privacyError");
-    showFeedback(error, "Please fill all required fields.");
-}
-
-function showSuccessMessage() {
-    let message = document.getElementById("formMessage");
-    showFeedback(message, "Your message has been sent successfully.");
-}
-
-function showSuccessMessage() {
-    let message = document.getElementById("formMessage");
-
-    if (!canShowFeedback(message)) return;
-
-    startFeedback(message, "Your message has been sent successfully.");
-
-    feedbackTimer = setTimeout(function () {
-        endFeedback(message);
-    }, 6000);
-}
-
-function canShowFeedback(el) {
-    return !isFeedbackVisible && !!el;
-}
-
-function startFeedback(el, text) {
-    isFeedbackVisible = true;
-
-    el.textContent = text;
-    el.classList.add("visible");
-
-    clearTimeout(feedbackTimer);
-}
-
-function endFeedback(el) {
     el.textContent = "";
     el.classList.remove("visible");
     isFeedbackVisible = false;
