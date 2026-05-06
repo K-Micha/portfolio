@@ -141,3 +141,41 @@ function closeMenuOnEscape(event) {
 
     closeOverlayMenu();
 }
+
+/** Initializes mobile project hover by viewport position. */
+function initProjectViewportHover() {
+    if (!isTouchDevice()) return;
+
+    let cards = document.querySelectorAll(".project-content");
+    cards.forEach(observeProjectContent);
+}
+
+/** Observes one project content block. */
+function observeProjectContent(content) {
+    let observer = new IntersectionObserver(handleProjectView, {
+        threshold: 0.55
+    });
+
+    observer.observe(content);
+}
+
+/** Toggles hover state by viewport visibility. */
+function handleProjectView(entries) {
+    entries.forEach(toggleProjectHover);
+}
+
+/** Applies hover class to project item. */
+function toggleProjectHover(entry) {
+    let item = entry.target.closest(".project-item");
+    if (!item) return;
+
+    item.classList.toggle("is-hovered", entry.isIntersecting);
+}
+
+/** Detects touch devices. */
+function isTouchDevice() {
+    return window.matchMedia("(hover: none)").matches;
+}
+
+window.addEventListener("load", initProjectViewportHover);
+
