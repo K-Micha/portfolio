@@ -33,6 +33,37 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+/** Jumps directly to contact section. */
+function jumpToContact() {
+    let target = document.getElementById("contact");
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "auto" });
+}
+
+/** Jumps directly to about section. */
+function jumpToAbout() {
+    jumpToSection("about");
+}
+
+/** Jumps directly to skills section. */
+function jumpToSkills() {
+    jumpToSection("skills");
+}
+
+/** Jumps directly to project section. */
+function jumpToProject() {
+    jumpToSection("project");
+}
+
+/** Jumps directly to target section. */
+function jumpToSection(id) {
+    let target = document.getElementById(id);
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "auto" });
+}
+
 /** Toggles the language dropdown menu. */
 function toggleLangMenu() {
     document.querySelector(".lang").classList.toggle("open");

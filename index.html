@@ -52,7 +52,8 @@
 
             <nav class="menu-nav">
 
-                <a href="#about" onclick="closeOverlayMenu()">
+                <a href="javascript:void(0)" onclick="jumpToAbout(); closeOverlayMenu()">
+
                     <span class="nav-corner">
                         <span class="corner-v"></span>
                         <span class="corner-h"></span>
@@ -63,7 +64,8 @@
                     <span data-i18n="nav.about">About me</span>
                 </a>
 
-                <a href="#skills" onclick="closeOverlayMenu()">
+                <a href="javascript:void(0)" onclick="jumpToSkills(); closeOverlayMenu()">
+
                     <span class="nav-corner">
                         <span class="corner-v"></span>
                         <span class="corner-h"></span>
@@ -74,7 +76,8 @@
                     <span data-i18n="nav.skills">My skills</span>
                 </a>
 
-                <a href="#project" onclick="closeOverlayMenu()">
+                <a href="javascript:void(0)" onclick="jumpToProject(); closeOverlayMenu()">
+
                     <span class="nav-corner">
                         <span class="corner-v"></span>
                         <span class="corner-h"></span>
@@ -153,7 +156,7 @@
                 </div>
         </section>
 
-        <section class="about">
+        <section id="about" class="about">
             <div class="container">
 
                 <div class="left">
@@ -183,7 +186,9 @@
                     </div>
 
                     <div class="btn-wrap">
-                        <button class="cta" data-i18n="about.cta">Let’s talk</button>
+                        <button class="cta" data-i18n="about.cta" onclick="jumpToContact()">
+                            Lass uns sprechen
+                        </button>
                     </div>
                 </div>
 
