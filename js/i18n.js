@@ -41,7 +41,7 @@ const translations = {
                 desc: "Based on the PokéAPI, this application provides and displays Pokémon information in a clear and structured way."
             },
             delivery: {
-                title: "Delivery App",
+                title: "Order App",
                 desc: "A food delivery application inspired by Lieferando. Users can browse restaurants, explore menus, and place orders through a simple interface."
             }
         },
@@ -118,8 +118,8 @@ const translations = {
                 desc: "Basierend auf der PokéAPI stellt diese Anwendung Pokémon-Informationen klar und strukturiert dar."
             },
             delivery: {
-                title: "Delivery App",
-                desc: "Eine Food-Delivery-Anwendung inspiriert von Lieferando. Nutzer können Restaurants ansehen, Menüs durchsuchen und Bestellungen über eine einfache Oberfläche aufgeben."
+                title: "Liefer App",
+                desc: "Eine Liefer-App inspiriert von Lieferando. Hier können Sie sich ganz einfach eine Mahlzeit bestellen."
             }
         },
         references: {
