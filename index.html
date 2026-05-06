@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <div id="menu" class="menu">
+                <div id="menu" class="menu" onclick="toggleOverlayMenu()">
                     <span id="top" class="line top"></span>
                     <span id="mid" class="line mid"></span>
                     <span id="bot" class="line bot"></span>
@@ -47,19 +47,67 @@
         </div>
     </header>
 
-    <div class="menu-overlay">
+    <div id="menuOverlay" class="menu-overlay">
         <div class="menu-inner">
 
             <nav class="menu-nav">
-                <a href="#about" data-i18n="nav.about">About me</a>
-                <a href="#skills" data-i18n="nav.skills">My skills</a>
-                <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+
+                <a href="#about" onclick="closeOverlayMenu()">
+                    <span class="nav-corner">
+                        <span class="corner-v"></span>
+                        <span class="corner-h"></span>
+                    </span>
+
+                    <span class="nav-line"></span>
+
+                    <span data-i18n="nav.about">About me</span>
+                </a>
+
+                <a href="#skills" onclick="closeOverlayMenu()">
+                    <span class="nav-corner">
+                        <span class="corner-v"></span>
+                        <span class="corner-h"></span>
+                    </span>
+
+                    <span class="nav-line"></span>
+
+                    <span data-i18n="nav.skills">My skills</span>
+                </a>
+
+                <a href="#project" onclick="closeOverlayMenu()">
+                    <span class="nav-corner">
+                        <span class="corner-v"></span>
+                        <span class="corner-h"></span>
+                    </span>
+
+                    <span class="nav-line"></span>
+
+                    <span data-i18n="nav.portfolio">Portfolio</span>
+                </a>
+
             </nav>
 
-            <!-- EINZIGES OVERLAY-ELEMENT -->
-            <div class="sayhi-overlay-bg"></div>
-
+            <div class="menu-basic-black"></div>
             <div class="menu-diagonal"></div>
+
+            <section class="overlay-sayhi">
+                <div>
+                    <h2>Say Hi!</h2>
+                    <p>mail@michael-a-kuehn.de</p>
+                </div>
+
+                <div class="overlay-socials">
+                    <a href="https://github.com" target="_blank">
+                        <img src="./assets/icons/github.svg" alt="GitHub">
+                    </a>
+                    <a href="mailto:mail@michael-a-kuehn.de">
+                        <img src="./assets/icons/email.svg" alt="Email">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank">
+                        <img src="./assets/icons/linkedin.svg" alt="LinkedIn">
+                    </a>
+                </div>
+            </section>
 
         </div>
     </div>
@@ -122,30 +170,30 @@
                             I work independently and in an organized way, and I also contribute effectively in a team.
                         </p>
                     </div>
-                    
-                        <div class="info">
-                            <div class="item">
-                                <img class="icon" src="./assets/icons/house.svg" alt="Home Icon">
-                                <span data-i18n="about.location">Based in Strasswalchen</span>
-                            </div>
 
-                            <div class="item">
-                                <img class="icon" src="./assets/icons/laptop_chromebook.svg" alt="Monitor Icon">
-                                <span data-i18n="about.remote">Open to work Remote</span>
-                            </div>
+                    <div class="info">
+                        <div class="item">
+                            <img class="icon" src="./assets/icons/house.svg" alt="Home Icon">
+                            <span data-i18n="about.location">Based in Strasswalchen</span>
                         </div>
 
-                        <div class="btn-wrap">
-                            <button class="cta" data-i18n="about.cta">Let’s talk</button>
+                        <div class="item">
+                            <img class="icon" src="./assets/icons/laptop_chromebook.svg" alt="Monitor Icon">
+                            <span data-i18n="about.remote">Open to work Remote</span>
                         </div>
                     </div>
 
-                    <div class="right about-image-wrapper">
-                        <img src="./assets/img/michael27.04.png" id="about-img" alt="Portrait">
-                        <div class="about-border"></div>
+                    <div class="btn-wrap">
+                        <button class="cta" data-i18n="about.cta">Let’s talk</button>
                     </div>
-
                 </div>
+
+                <div class="right about-image-wrapper">
+                    <img src="./assets/img/michael27.04.png" id="about-img" alt="Portrait">
+                    <div class="about-border"></div>
+                </div>
+
+            </div>
 
         </section>
         <div class="section-divider divider-right">

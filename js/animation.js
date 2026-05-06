@@ -171,14 +171,20 @@ function animate(frames) {
   step();
 }
 
-/**
-* Toggles burger animation on click.
-*/
-menu.addEventListener('click', () => {
-  if (isAnimating) return;
+/** Plays burger opening animation. */
+function playBurgerOpen() {
+  if (isAnimating || open) return;
 
-  animate(open ? framesClose : framesOpen);
-  open = !open;
-});
+  animate(framesOpen);
+  open = true;
+}
+
+/** Plays burger closing animation. */
+function playBurgerClose() {
+  if (isAnimating || !open) return;
+
+  animate(framesClose);
+  open = false;
+}
 
 applyFrame(frame1());
