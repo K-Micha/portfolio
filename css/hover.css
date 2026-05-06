@@ -58,10 +58,25 @@
     .contact h2:hover {
         color: rgba(0, 188, 143, 1) !important;
     }
-    .footer-legal:hover{
+
+    .footer-legal:hover {
         color: rgba(255, 252, 243, 1) !important;
     }
+
     .footer-icon:hover img {
-    transform: translateY(-10px);
-}
+        transform: translateY(-10px);
+    }
+
+    .menu-nav a:hover .corner-v {
+        animation: navCornerFold 0.2s ease forwards;
+    }
+
+    .menu-nav a:hover .corner-h {
+        opacity: 0;
+    }
+
+    .menu-nav a:hover .nav-line {
+        opacity: 1;
+        animation: navLineMove 0.45s ease forwards;
+    }
 }
