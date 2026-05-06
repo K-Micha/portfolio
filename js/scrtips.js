@@ -100,3 +100,13 @@ function closeOverlayMenu() {
 function unlockMenu() {
     isMenuBusy = false;
 }
+
+document.onkeydown = closeMenuOnEscape;
+
+/** Closes overlay menu with escape key. */
+function closeMenuOnEscape(event) {
+    if (event.key !== "Escape") return;
+    if (!isMenuOpen || isMenuBusy) return;
+
+    closeOverlayMenu();
+}

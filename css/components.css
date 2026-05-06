@@ -182,7 +182,6 @@ input:-webkit-autofill:focus {
   position: relative;
 }
 
-/* Linke Linie */
 .skills-frame::before {
   content: "";
   position: absolute;
@@ -193,7 +192,6 @@ input:-webkit-autofill:focus {
   background: black;
 }
 
-/* Rechte Linie */
 .skills-frame::after {
   content: "";
   position: absolute;
@@ -204,7 +202,6 @@ input:-webkit-autofill:focus {
   background: black;
 }
 
-/* Untere Linie */
 .skills-inner {
   position: relative;
   padding-bottom: 40px;
@@ -220,14 +217,12 @@ input:-webkit-autofill:focus {
   background: black;
 }
 
-/* Obere Linie/Titel */
 .skills-title {
   position: relative;
   text-align: center;
   margin-bottom: 40px;
 }
 
-/* obere Linie */
 .skills-title::before {
   content: "";
   position: absolute;
@@ -238,7 +233,6 @@ input:-webkit-autofill:focus {
   background: black;
 }
 
-/* Text/ Linie */
 .skills-title span {
   position: relative;
   padding: 0 20px;
