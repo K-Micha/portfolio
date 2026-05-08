@@ -1,29 +1,32 @@
 @keyframes navCornerFold {
     0% {
         opacity: 1;
-        height: 20px;
+        height: 39px;
     }
 
     100% {
         opacity: 0;
-        height: 2px;
+        height: 4px;
     }
 }
 
 @keyframes navLineMove {
     0% {
-        left: -34px;
+        left: 0;
         width: 20px;
+        height: 4px;
     }
 
     35% {
-        left: -34px;
+        left: 0;
         width: 120px;
+        height: 4px;
     }
 
     100% {
-        left: calc(100% - 86px);
+        left: calc(100% - 120px);
         width: 120px;
+        height: 4px;
     }
 }
 
@@ -49,32 +52,43 @@
     position: relative;
     width: 100%;
     height: 100%;
+    
 }
 
 .menu-nav {
-    position: relative;
-    z-index: 35;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 42px;
+    justify-items: center;
+    padding-top: 93px;
+    white-space: nowrap;
+}
+
+.abou,
+.ski,
+.port {
+    font-size: 96px;
+    line-height: 1;
+    letter-spacing: -2.5%;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
 }
 
 .menu-nav a {
     position: relative;
     color: black;
     text-decoration: none;
-    font-size: clamp(38px, 5vw, 64px);
     font-weight: 700;
-    line-height: 1;
     opacity: 0;
     transform: translateY(-24px);
     transition: opacity 0.35s ease, transform 0.35s ease;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    width: fit-content;
+    justify-content: center;
+    width: 580px;
+    margin: 0;
+}
+
+.menu-nav a + a {
+    margin-top: 35px;
+    height: 132px;
 }
 
 .menu-overlay.open .menu-nav a {
@@ -96,7 +110,7 @@
 
 .nav-corner {
     position: absolute;
-    left: -34px;
+    left: 0;
     bottom: -16px;
     width: 20px;
     height: 20px;
@@ -107,8 +121,8 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 2px;
-    height: 20px;
+    width: 4px;
+    height: 39px;
     background: black;
 }
 
@@ -116,14 +130,14 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 20px;
-    height: 2px;
+    width: 39px;
+    height: 4px;
     background: black;
 }
 
 .nav-line {
     position: absolute;
-    left: -34px;
+    left: 0;
     bottom: -16px;
     width: 20px;
     height: 2px;
@@ -137,7 +151,7 @@
     bottom: 0;
     z-index: 40;
     width: 100%;
-    height: 250px;
+    height: 348px;
     background: black;
 
     clip-path: polygon(
@@ -166,12 +180,13 @@
 
 .overlay-sayhi {
     position: absolute;
-    left: 0;
+    left: 25px;
+    gap: 10px;
     bottom: 0;
     z-index: 50;
     width: 100%;
     min-height: 130px;
-    padding: 0 6vw 32px;
+    padding: 50px 50px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -184,6 +199,10 @@
         transform 0.35s ease;
 }
 
+.overlay-left {
+    padding: 0 0 80px 0;
+}
+
 .menu-overlay.footer-open .overlay-sayhi {
     opacity: 1;
     transform: translateY(0);
@@ -191,23 +210,28 @@
 }
 
 .overlay-sayhi h2 {
-    font-size: clamp(38px, 5vw, 64px);
+    font-size: 78px;
+    letter-spacing: 1%;
+    font-weight: 900;
     margin: 0;
 }
 
 .overlay-sayhi p {
     margin: 8px 0 0;
-    font-size: 14px;
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: -2.5%;
 }
 
 .overlay-socials {
     display: flex;
-    gap: 24px;
+    gap: 42px;
+    padding-right: 40px;
 }
 
 .overlay-socials img {
-    width: 22px;
-    height: 22px;
+    width: 40px;
+    height: 40px;
     filter: brightness(0) invert(1);
 }
 
