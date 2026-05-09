@@ -101,7 +101,6 @@ main {
 .header {
     position: relative;
     z-index: 1000;
-    /* Header über Overlay */
 }
 
 .logo img {
@@ -148,13 +147,11 @@ main {
     width: 40px;
     height: 32px;
     position: relative;
-    /* WICHTIG */
     cursor: pointer;
 }
 
 .menu .line {
     position: absolute;
-    /* WICHTIG */
     left: 50%;
     top: 50%;
     height: 4px;
@@ -164,8 +161,6 @@ main {
     transform-origin: center;
 }
 
-
-/* hero info */
 .hero-header-top {
     justify-self: center;
 }
@@ -229,7 +224,6 @@ main {
     gap: 4px;
 }
 
-/*About me */
 .about .container {
     padding: 0 100px 0 100px;
     display: flex;
@@ -297,6 +291,7 @@ main {
     padding: 20px 60px 20px 60px;
     font-size: 22px;
     border: 4px solid black;
+    background-color: rgba(255, 252, 243, 1);
 }
 
 .info .icon {
@@ -425,7 +420,6 @@ main {
     line-height: 120%;
 }
 
-/* footer */
 .contact-footer-bg {
     z-index: 1;
     margin-top: -50px;
@@ -440,12 +434,11 @@ main {
 }
 
 .contact .container {
-    max-width: 1240px;
+    padding: 0 100px 0 104px;
 }
 
 .contact h2 {
     font-size: 78px;
-    margin-left: 104px;
 }
 
 .contact-subtitle {
@@ -464,6 +457,7 @@ main {
 }
 
 .contact-form {
+    max-width: 1240px;
     margin-top: 20px;
     width: 617px;
     display: flex;

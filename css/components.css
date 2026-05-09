@@ -439,3 +439,8 @@ a {
 .arrow-up:hover::after {
   top: -15px;
 }
+
+.references-controls,
+.ref-dots {
+    display: none;
+}

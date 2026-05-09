@@ -179,3 +179,84 @@ function isTouchDevice() {
 
 window.addEventListener("load", initProjectViewportHover);
 
+/** Reference cards */
+const referenceCards = [i1, i2, i3];
+
+/** Navigation dots */
+const referenceDots = [d1, d2, d3];
+
+/** Current active card index */
+let currentReference = 0;
+
+
+/**
+* Updates card positions and active state.
+*/
+function updateReferences() {
+    resetReferences();
+
+    const leftCard = (currentReference + 2) % 3;
+    const centerCard = currentReference;
+    const rightCard = (currentReference + 1) % 3;
+
+    setCardOrder(leftCard, 1);
+    setCardOrder(centerCard, 2);
+    setCardOrder(rightCard, 3);
+
+    activateReference(centerCard);
+}
+
+
+/**
+* Resets all cards and dots.
+*/
+function resetReferences() {
+    for (let i = 0; i < referenceCards.length; i++) {
+        referenceCards[i].className = 'reference-item';
+        referenceCards[i].style.order = '';
+
+        referenceDots[i].className = 'ref-dot';
+    }
+}
+
+
+/**
+* Sets visual order for one card.
+*/
+function setCardOrder(index, order) {
+    referenceCards[index].style.order = order;
+}
+
+
+/**
+* Activates one reference card and dot. 
+* @param {number} index
+*/
+function activateReference(index) {
+    referenceCards[index].classList.add('active');
+    referenceDots[index].classList.add('active');
+}
+
+
+/**
+* Shows previous reference.
+*/
+function showPreviousReference() {
+    currentReference = (currentReference + 2) % 3;
+    updateReferences();
+}
+
+
+/**
+* Shows next reference.
+*/
+function showNextReference() {
+    currentReference = (currentReference + 1) % 3;
+    updateReferences();
+}
+
+
+prev.onclick = showPreviousReference;
+next.onclick = showNextReference;
+
+updateReferences();
