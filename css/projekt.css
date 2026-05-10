@@ -84,7 +84,7 @@
 }
 
 .tech {
-    color: rgba(0, 188, 143, 1);
+    color: rgba(75, 71, 255, 1);
     font-weight: 400;
     font-size: 23px;
 }
@@ -349,6 +349,6 @@
     left: 0;
     width: 50%;
     height: 2px;
-    background: #00b894;
+    background: rgba(75, 71, 255, 1);
     opacity: 0;
 }

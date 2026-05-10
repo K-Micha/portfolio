@@ -124,7 +124,7 @@ main {
 }
 
 .lang button.active {
-    border-color: rgba(0, 188, 143, 1);
+    border-color: rgba(75, 71, 255, 1);
 }
 
 .lang-options {
@@ -204,7 +204,7 @@ main {
     font-size: 48px;
     letter-spacing: -2.5%;
     font-weight: bold;
-    color: rgba(0, 188, 143, 1);
+    color: rgba(75, 71, 255, 1);
 }
 
 .email {
@@ -351,6 +351,7 @@ main {
 
 .scroll-link{
     cursor: pointer;
+    color: rgba(75, 71, 255, 1) !important;
 }
 
 .references {
@@ -447,7 +448,7 @@ main {
     font-size: 32px;
     font-weight: 700;
     text-align: center;
-    color: rgba(0, 188, 143, 1);
+    color: rgba(75, 71, 255, 1);
 }
 
 .contact-text {
@@ -545,7 +546,7 @@ h3 {
 
 .policy-link {
     display: inline-block;
-    color: rgba(0, 188, 143, 1);
+    color: rgba(75, 71, 255, 1);
     text-decoration: none;
     transition: 0.2s ease;
 }

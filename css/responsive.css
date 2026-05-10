@@ -53,8 +53,8 @@
         height: auto;
 
         opacity: 1;
-        border-color: rgba(0, 188, 143, 1);
-        box-shadow: 0 0 20px rgba(0, 188, 143, 0.25);
+        border-color: rgba(75, 71, 255, 1);
+        box-shadow: 0 0 20px rgba(74, 71, 255, 0.486);
 
         padding: 32px 24px 28px;
     }
@@ -96,7 +96,7 @@
     }
 
     .reference-item.active .reference-icon img {
-        filter: invert(48%) sepia(77%) saturate(400%) hue-rotate(120deg);
+        filter: invert(33%) sepia(99%) saturate(2600%) hue-rotate(236deg) brightness(102%) contrast(102%);
         width: 40px;
         height: 40px;
     }
@@ -145,9 +145,18 @@
     }
 
     .ref-dot.active {
-        background: rgba(0, 188, 143, 1);
+        background: rgba(75, 71, 255, 1);
         opacity: 1;
     }
+}
+@media (max-width: 900px){
+    .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 90px);
+    justify-content: center;
+    gap: 48px 32px;
+    padding: 0 35px;
+}
 }
 
 @media (min-width: 1201px) {
@@ -185,5 +194,10 @@
 @media (max-width: 1300px) {
     .footer-arrow-wrapper {
         padding-right: 100px;
+    }
+
+    .skills-note {
+        display: block;
+        margin-top: 12px;
     }
 }
