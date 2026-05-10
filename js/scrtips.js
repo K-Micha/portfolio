@@ -146,17 +146,18 @@ function closeMenuOnEscape(event) {
 function initProjectViewportHover() {
     if (!isTouchDevice()) return;
 
-    let cards = document.querySelectorAll(".project-content");
-    cards.forEach(observeProjectContent);
+    let cards = document.querySelectorAll(".project-item");
+    cards.forEach(observeProjectItem);
 }
 
-/** Observes one project content block. */
-function observeProjectContent(content) {
+/** Observes one project item. */
+function observeProjectItem(item) {
     let observer = new IntersectionObserver(handleProjectView, {
-        threshold: 0.55
+        threshold: 0.2,
+        rootMargin: "-40px 0px -80px 0px"
     });
 
-    observer.observe(content);
+    observer.observe(item);
 }
 
 /** Toggles hover state by viewport visibility. */
@@ -166,10 +167,7 @@ function handleProjectView(entries) {
 
 /** Applies hover class to project item. */
 function toggleProjectHover(entry) {
-    let item = entry.target.closest(".project-item");
-    if (!item) return;
-
-    item.classList.toggle("is-hovered", entry.isIntersecting);
+    entry.target.classList.toggle("is-hovered", entry.isIntersecting);
 }
 
 /** Detects touch devices. */

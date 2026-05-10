@@ -86,7 +86,6 @@ main {
 }
 
 .hero-title {
-    font-size: 128px;
     font-weight: bolder;
     letter-spacing: -2.5%;
     justify-self: center;
@@ -165,10 +164,6 @@ main {
     justify-self: center;
 }
 
-.hero {
-    padding: 0 100px 0 100px;
-}
-
 .top-inner {
     display: flex;
     align-items: center;
@@ -201,7 +196,6 @@ main {
 }
 
 .name-box .name {
-    font-size: 48px;
     letter-spacing: -2.5%;
     font-weight: bold;
     color: rgba(75, 71, 255, 1);
