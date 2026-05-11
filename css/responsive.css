@@ -1,10 +1,10 @@
-@media (min-width: 768px) and (max-width: 999px) {
+@media (min-width: 751px) and (max-width: 999px) {
     .skills-title span {
         display: inline-block;
         transform: translateY(18px);
     }
 
-    .projects-intro{
+    .projects-intro {
         padding: 0px 80px;
     }
 
@@ -60,8 +60,8 @@
         padding: 0 100px 0 60px;
     }
 
-    .project-side .right{
-         padding: 0 60px 0 60px;
+    .project-side .right {
+        padding: 0 60px 0 60px;
     }
 
     .about-image-wrapper img {
@@ -432,4 +432,180 @@
         display: block;
         margin-top: 12px;
     }
+}
+
+@media (max-width: 750px) {
+
+    .header .container,
+    .container,
+    .about .container,
+    .skills .container,
+    .project-content {
+        padding: 0 24px 0 24px !important;
+    }
+
+    .email {
+        position: absolute;
+        transform: translateY(260px) rotate(-90deg);
+        left: 24px;
+        left: -100px;
+    }
+
+    .hero-title .title-line,
+    .hero-title .second-line {
+        font-size: 45px;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .title-line {
+        padding-left: 15px;
+    }
+
+    .line-box {
+        width: 180px;
+    }
+
+    .line .name {
+        font-size: 23px;
+    }
+
+    .hero .container {
+        height: 530px;
+        position: relative;
+    }
+
+    .scroll {
+        transform: translateY(130px);
+    }
+
+    .about h2 {
+        font-size: 36px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .about .container {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about .left {
+        width: 100%;
+        gap: 34px;
+    }
+
+    .about .left p,
+    span {
+        font-size: 20px;
+    }
+
+    .about-image-wrapper {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        width: 100% !important;
+    }
+
+    .about .right img {
+        margin-top: auto;
+        position: relative;
+        height: auto;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+
+    .info {
+        padding-top: 0;
+    }
+
+    .section-divider .container {
+        right: 60px;
+        margin-right: auto;
+    }
+
+    .divider-left {
+        left: 120px;
+    }
+
+    .references-list {
+        display: flex;
+        gap: 24px;
+        flex-direction: column;
+    }
+
+    .skills-title span {
+        font-size: 36px;
+    }
+
+    .skills-frame::before,
+    .skills-frame::after {
+        top: 25px;
+    }
+
+    .skill img {
+        height: 60px;
+    }
+
+    .skills-grid {
+        margin-top: 63px;
+        gap: 25px;
+        padding: 0;
+    }
+
+    .scroll-link {
+        display: block;
+    }
+
+    .projects h2 {
+        font-size: 36px !important;
+    }
+
+    .projects-intro {
+        font-size: 20px;
+    }
+
+    .project-number {
+        font-size: 23px !important;
+    }
+
+    .project-image-wrapper {
+        width: min(316px, calc(100vw - 48px)) !important;
+        height: auto !important;
+        aspect-ratio: 316 / 200;
+    }
+
+    .project-image-wrapper img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    .hover-border {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .project-image-left {
+        right: 25px !important;
+    }
+
+    .project-image-right {
+        left: 25px !important;
+    }
+
+    .hover-circle {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .project-image-left .hover-circle {
+        left: calc(var(--border-offset) + 99%) !important;
+    }
+
+    .project-image-right .hover-circle {
+        right: calc(var(--border-offset) + 99%) !important;
+    }
+
 }
