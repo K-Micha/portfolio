@@ -4,6 +4,10 @@
         transform: translateY(18px);
     }
 
+    .section-divider {
+        position: relative;
+    }
+
     .projects-intro {
         padding: 0px 80px;
     }
@@ -368,6 +372,10 @@
 }
 
 @media (max-width: 1000px) {
+    .section-divider {
+        position: relative;
+    }
+
     .project-content {
         height: auto;
         padding: 0 30px;
@@ -435,6 +443,13 @@
 }
 
 @media (max-width: 750px) {
+    .project-side .right {
+        position: absolute;
+    }
+
+    .project-content .left {
+        justify-content: flex-end;
+    }
 
     .header .container,
     .container,
@@ -525,10 +540,6 @@
         margin-right: auto;
     }
 
-    .divider-left {
-        left: 120px;
-    }
-
     .references-list {
         display: flex;
         gap: 24px;
@@ -576,6 +587,37 @@
         aspect-ratio: 316 / 200;
     }
 
+    .project-image-wrapper {
+        width: min(360px, calc(100vw - 48px)) !important;
+        height: auto !important;
+        aspect-ratio: 316 / 200;
+    }
+
+    .project-content {
+        padding: 0 24px !important;
+    }
+
+    .project-media-side {
+        width: fit-content;
+        max-width: fit-content;
+    }
+
+    .project-right .project-media-side {
+        margin-left: auto;
+        margin-right: -12px;
+    }
+
+    .project-left .project-media-side {
+        margin-right: auto;
+        margin-left: -12px;
+    }
+
+    .project-image-wrapper {
+        width: min(360px, calc(100vw - 48px)) !important;
+        height: auto !important;
+        aspect-ratio: 316 / 200;
+    }
+
     .project-image-wrapper img {
         width: 100% !important;
         height: 100% !important;
@@ -587,19 +629,6 @@
         height: 100% !important;
     }
 
-    .project-image-left {
-        right: 25px !important;
-    }
-
-    .project-image-right {
-        left: 25px !important;
-    }
-
-    .hover-circle {
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
     .project-image-left .hover-circle {
         left: calc(var(--border-offset) + 99%) !important;
     }
@@ -608,4 +637,49 @@
         right: calc(var(--border-offset) + 99%) !important;
     }
 
+    .skills-info {
+        padding: 20px;
+    }
+
+    .references .container h2 {
+        font-size: 38px;
+    }
+
+    .references-intro p {
+        font-size: 20px;
+    }
+
+    .contact h2 {
+        font-size: 45px;
+    }
+
+    .contact-form {
+        width: 340px;
+    }
+
+    .footer-arrow-wrapper {
+        position: absolute;
+        right: clamp(0px, calc((100vw - 1240px) / 2), 100px);
+        bottom: 150px;
+        width: 30px;
+        height: 60px;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .disabled-btn {
+        padding: 20px 40px;
+    }
+
+    .contact-privacy {
+        flex-wrap: wrap;
+    }
+
+    .contact-privacy .padding {
+        padding-left: 35px;
+    }
+
+    footer {
+        padding: 0 40px 40px 0 !important;
+    }
 }

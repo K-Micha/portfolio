@@ -1,0 +1,217 @@
+@media (max-width: 600px) {
+    .arrow-container {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+        position: relative;
+        transform: none;
+    }
+
+    .section-divider .container {
+        left: auto;
+        right: auto !important;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .footer-right {
+        order: 1;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .footer-icons {
+        order: 1;
+        justify-content: center;
+        gap: 42px;
+    }
+
+    .footer-left {
+        order: 2;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .footer-logo {
+        order: 1;
+        padding-top: 30px;
+    }
+
+    .footer-left p {
+        order: 2;
+        font-size: 16px;
+    }
+
+    .legal {
+        order: 3;
+        justify-content: center;
+    }
+
+    .footer-arrow-wrapper {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .project-content {
+        padding: 0 24px !important;
+    }
+
+    .project-media-side {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible;
+    }
+
+    .project-image-wrapper {
+        width: calc(100vw - 120px) !important;
+        max-width: 300px !important;
+        min-width: 240px;
+        height: auto !important;
+        aspect-ratio: 316 / 200;
+    }
+
+    .project-right .project-media-side {
+        justify-content: flex-end;
+        margin-right: 0;
+    }
+
+    .project-left .project-media-side {
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+
+    .project-image-left .hover-circle {
+        left: calc(var(--border-offset) + 99%) !important;
+    }
+
+    .project-image-right .hover-circle {
+        right: calc(var(--border-offset) + 99%) !important;
+    }
+
+    .hover-circle {
+        width: 52px !important;
+        height: 52px !important;
+    }
+
+    .hover-icon {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .hover-icon::before {
+        width: 3px !important;
+        height: 22px !important;
+        top: 4px !important;
+    }
+
+    .hover-icon::after {
+        width: 14px !important;
+        height: 14px !important;
+        border-right-width: 3px !important;
+        border-bottom-width: 3px !important;
+        bottom: 2px !important;
+    }
+
+    .project-item.is-hovered .hover-circle {
+        width: 62px !important;
+        height: 62px !important;
+    }
+
+    .project-item.is-hovered .hover-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .project-item.is-hovered .hover-icon::before {
+        height: 28px !important;
+    }
+
+    .project-item.is-hovered .hover-icon::after {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .project-buttons {
+        margin-top: 18px !important;
+        padding: 14px 30px !important;
+        font-size: 18px !important;
+    }
+
+    .project-buttons a {
+        font-size: 18px !important;
+    }
+
+    .about-image-wrapper img {
+        width: clamp(240px, calc(100vw - 80px), 320px) !important;
+
+        height: auto !important;
+    }
+
+    .about-image-wrapper {
+        width: 100% !important;
+
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .disabled-btn {
+        width: 201px;
+    }
+
+    .active-btn,
+    .disabled-btn {
+        font-size: 0;
+    }
+
+    .active-btn::after,
+    .disabled-btn::after {
+        content: "Say Hello";
+        font-size: 16px;
+    }
+
+    .footer-left p {
+        padding: 27px 0;
+        font-size: 19px;
+    }
+
+    .contact-privacy {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+        .footer-right{
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 380px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .project-image-wrapper {
+        transform: scale(0.92);
+        transform-origin: center top;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .hover-border,
+    .hover-circle {
+        display: none !important;
+    }
+
+    .project-image-wrapper img {
+        filter: none !important;
+    }
+}
