@@ -72,6 +72,7 @@ function toggleLangMenu() {
 let isMenuOpen = false;
 let isMenuBusy = false;
 let footerTimer = null;
+document.body.classList.add("lang-hidden");
 
 /** Toggles overlay menu state. */
 function toggleOverlayMenu() {
@@ -95,6 +96,7 @@ function openOverlayMenu() {
 
     overlay.classList.add("open");
     document.body.classList.add("menu-locked");
+    document.body.classList.remove("lang-hidden");
 
     playBurgerOpen();
     triggerFooter(overlay);
@@ -120,6 +122,7 @@ function closeOverlayMenu() {
     overlay.classList.remove("footer-open");
     overlay.classList.remove("open");
     document.body.classList.remove("menu-locked");
+    document.body.classList.add("lang-hidden");
 
     playBurgerClose();
     isMenuOpen = false;
