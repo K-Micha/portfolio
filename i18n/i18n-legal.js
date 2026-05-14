@@ -353,6 +353,9 @@ const legalPages = {
             außerhalb der Grenzen des Urheberrechts bedarf der schriftlichen
             Zustimmung des jeweiligen Autors oder Erstellers.
         </p>
+        <p>
+            Stand: 13. Mai 2026
+        </p>
     `,
 
         en: `
@@ -403,6 +406,10 @@ const legalPages = {
             Any duplication, editing, distribution, or use outside the
             limits of copyright law requires the written consent
             of the respective author or creator.
+        </p>
+
+        <p>
+            Last updated: May 13, 2026
         </p>
     `
     }
