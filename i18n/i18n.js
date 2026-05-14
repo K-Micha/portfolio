@@ -14,7 +14,7 @@ const translations = {
         about: {
             title: "About me",
             text: "I decided to pursue software development and currently focus on frontend development.\n\nMy work focuses on structured, clear solutions and clean implementation. I aim to understand how applications work and how they can be improved.\n\nI work independently and in an organized way, and I also contribute effectively in a team.",
-            location: "Based in Straßwalchen",
+            location: "Based in Salzburg",
             remote: "Open to remote work",
             cta: "Let’s talk"
         },
@@ -91,7 +91,7 @@ const translations = {
         about: {
             title: "Über mich",
             text: "Ich habe mich bewusst für die Softwareentwicklung entschieden und konzentriere mich aktuell auf Frontend Development.\n\nMeine Arbeit steht für strukturierte, klare Lösungen und saubere Umsetzung. Ich möchte verstehen, wie Anwendungen funktionieren und wie man sie verbessern kann.\n\nIch arbeite selbstständig und organisiert, kann aber auch effektiv im Team beitragen.",
-            location: "Wohnhaft in Straßwalchen",
+            location: "Wohnhaft in Salzburg",
             remote: "Offen für Remote-Arbeit",
             cta: "Lass uns sprechen"
         },
