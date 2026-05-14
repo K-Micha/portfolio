@@ -1,7 +1,7 @@
 const legalPages = {
     privacy: {
         de: `
-            <h1>Datenschutzerklärung</h1>
+            <h1>Datenschutz</h1>
 
             <h2>1. Datenschutz auf einen Blick</h2>
 
