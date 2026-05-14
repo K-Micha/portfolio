@@ -285,6 +285,10 @@
     .menu-nav a {
         text-align: center;
     }
+
+    .scroll{
+        right: 0px;
+    }
 }
 
 @media (max-width: 380px) {

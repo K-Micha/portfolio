@@ -1,3 +1,19 @@
+@media (min-height: 1800px) {
+    .menu-nav{
+         display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 80%;
+    }
+    .menu-overlay.footer-open .menu-diagonal{
+        height: 648px !important;
+        text-align: center;
+    }
+    
+}
+
 @media (min-width: 751px) and (max-width: 999px) {
     .skills-title span {
         display: inline-block;
@@ -688,4 +704,18 @@
     footer {
         padding: 0 40px 40px 0 !important;
     }
+}
+
+@media (hover: none) {
+
+    .hover-circle::after {
+        opacity: 1;
+    }
+
+    .project-item.is-hovered .hover-border,
+    .project-item.is-hovered .hover-circle,
+    .project-item.is-hovered .hover-circle::after {
+        opacity: 1;
+    }
+
 }
