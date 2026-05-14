@@ -184,7 +184,9 @@ function updateText(element) {
     let key = element.dataset.i18n;
     let text = getTranslation(key);
 
-    if (text) element.innerText = text;
+    if (text) {
+        element.textContent = text;
+    }
 }
 
 /** Retrieves a translation value using a dot‑notation path. */
