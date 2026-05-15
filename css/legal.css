@@ -1,5 +1,17 @@
-@media (min-width: 1600px){
-    .contact-overlay{
+.privacy-policy,
+.policy-page {
+    min-height: auto;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+    margin-bottom: 80px;
+    display: flex;
+}
+
+@media (min-width: 1600px) {
+    .contact-overlay {
         padding-top: 0;
         height: 380px;
         max-height: 100dvh;
@@ -15,7 +27,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
     position: relative;
     z-index: 2;
     gap: 24px;
@@ -47,7 +58,7 @@
 }
 
 .contact-footer-bg {
-    top: 50px;
+    height: auto;
 }
 
 @media (max-width: 1440px) {
@@ -221,8 +232,8 @@
     }
 }
 
-@media (max-width: 600px){
-    .footer{
+@media (max-width: 600px) {
+    .footer {
         padding: 0 !important;
     }
 }

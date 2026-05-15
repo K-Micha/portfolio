@@ -38,7 +38,7 @@ function jumpToContact() {
     let target = document.getElementById("contact");
     if (!target) return;
 
-    target.scrollIntoView({ behavior: "auto" });
+    target.scrollIntoView({ behavior: "smooth" });
 }
 
 /** Jumps directly to about section. */
@@ -61,7 +61,7 @@ function jumpToSection(id) {
     let target = document.getElementById(id);
     if (!target) return;
 
-    target.scrollIntoView({ behavior: "auto" });
+    target.scrollIntoView({ behavior: "smooth" });
 }
 
 /** Toggles the language dropdown menu. */

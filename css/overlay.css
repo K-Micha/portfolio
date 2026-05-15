@@ -1,3 +1,15 @@
+@media (min-width: 751px) {
+    html[lang="en"] .menu-nav a {
+        width: 630px !important;
+    }
+}
+
+@media (max-width: 751px){
+    html[lang="en"] .menu-nav a {
+        width: 300px !important;
+    }
+}
+
 @keyframes navCornerFold {
     0% {
         opacity: 1;
@@ -52,7 +64,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    
+
 }
 
 .menu-nav {
@@ -86,7 +98,7 @@
     margin: 0;
 }
 
-.menu-nav a + a {
+.menu-nav a+a {
     margin-top: 35px;
     height: 132px;
 }
@@ -154,12 +166,10 @@
     height: 248px;
     background: black;
 
-    clip-path: polygon(
-        0 0,
-        100% 8vw,
-        100% 100%,
-        0 100%
-    );
+    clip-path: polygon(0 0,
+            100% 8vw,
+            100% 100%,
+            0 100%);
 
     transform: translateY(130px);
 

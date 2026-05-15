@@ -8,12 +8,13 @@ input:-webkit-autofill:focus {
 }
 
 @keyframes underlineMove {
-    0% {
-        left: 0;
-    }
-    100% {
-        left: 50%;
-    }
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 50%;
+  }
 }
 
 @keyframes iconOrbit {
@@ -82,11 +83,11 @@ input:-webkit-autofill:focus {
 }
 
 #formMessage.visible.success {
-    color: #00c896;
+  color: #00c896;
 }
 
 #formMessage.visible.error {
-    color: #ff4d4d;
+  color: #ff4d4d;
 }
 
 .section-divider {
@@ -304,9 +305,8 @@ input:-webkit-autofill:focus {
   transform: none;
 }
 
-.field:focus-within label, 
- .field.force-label label
-{
+.field:focus-within label,
+.field.force-label label {
   top: 0;
   transform: translateY(-50%);
   font-size: 16px;
@@ -333,7 +333,8 @@ input:-webkit-autofill:focus {
   border-radius: 50%;
   font-size: 12px;
   font-weight: bold;
-  display: none;
+    opacity: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -353,22 +354,30 @@ input:-webkit-autofill:focus {
 }
 
 .field.error .error-icon {
-  display: flex;
+   z-index: 3;
+    opacity: 1;
+    visibility: visible;
 }
 
 .field.success .success-icon {
-  display: flex;
+   z-index: 3;
+  opacity: 1;
+  visibility: visible;
 }
 
 .error-text {
   color: rgba(230, 28, 64, 1) !important;
   font-size: 12px;
-  display: none;
-  margin-top: -12px;
+  line-height: 16px;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: -8px;
+  pointer-events: none;
 }
 
 .error-text.visible {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .contact-privacy {
@@ -442,5 +451,5 @@ a {
 
 .references-controls,
 .ref-dots {
-    display: none;
+  display: none;
 }

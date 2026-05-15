@@ -51,13 +51,13 @@ body {
     margin: 0;
 }
 
-html{
+html {
     background-color: #000;
 }
 
 main {
     flex: 1;
-    
+
 }
 
 .container {
@@ -125,9 +125,16 @@ main {
     font-size: 24px;
     cursor: pointer;
     padding: 2px 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .lang button.active {
+    border-color: transparent;
+}
+
+.lang.open button.active {
     border-color: rgba(75, 71, 255, 1);
 }
 
@@ -301,7 +308,7 @@ main {
 
 .info span {
     font-size: 22px;
-     font-family: 'Overpass', sans-serif;
+    font-family: 'Overpass', sans-serif;
 }
 
 .skills .container {

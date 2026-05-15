@@ -1,46 +1,5 @@
 @media (max-width: 650px) {
 
-    .abou,
-    .ski,
-    .port {
-        font-size: 48px !important;
-    }
-
-    .menu-nav a {
-        width: 277px !important;
-        height: 80px;
-    }
-
-    .nav-corner {
-        left: 0;
-        bottom: 0;
-    }
-
-    .corner-v {
-        width: 4px;
-        height: 24px !important;
-    }
-
-    .corner-h {
-        width: 18px !important;
-        height: 4px;
-    }
-
-    .menu-nav a+a {
-        height: 80px !important;
-    }
-
-    .overlay-sayhi h2 {
-        font-size: 0 !important;
-    }
-
-    .overlay-sayhi h2::after {
-        content: "Say hi!";
-        font-size: 48px;
-        font-weight: 900;
-        letter-spacing: 1%;
-    }
-
     .overlay-sayhi p {
         font-size: 23px;
     }
@@ -66,10 +25,6 @@
 
     body.menu-locked .lang {
         visibility: visible !important;
-    }
-
-    .menu-overlay.footer-open .menu-diagonal {
-        height: 308px !important;
     }
 }
 
@@ -139,6 +94,26 @@
 }
 
 @media (max-width: 450px) {
+    .overlay-socials{
+        justify-self: center !important;
+    }
+
+    .menu-overlay.footer-open .menu-diagonal {
+        height: 308px;
+    }
+
+    .overlay-sayhi {
+        left: 0;
+    }
+
+    .overlay-sayhi p {
+        font-size: 18px !important;
+    }
+
+    .overlay-sayhi h2 {
+        font-size: 38px !important;
+    }
+
     .project-content {
         padding: 0 24px !important;
     }
@@ -300,6 +275,10 @@
 }
 
 @media (max-width: 380px) {
+    .menu-nav {
+        gap: 20px;
+    }
+
     .contact {
         padding: 0 24px !important;
         box-sizing: border-box;

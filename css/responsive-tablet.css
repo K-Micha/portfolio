@@ -1,22 +1,55 @@
 @media (min-height: 1800px) {
-    .contact-overlay{
+    .contact-overlay {
         height: 480px;
         margin-top: 0 !important;
     }
-    .menu-nav{
-         display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    height: 80%;
+
+    .menu-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: 80%;
     }
-    .menu-overlay.footer-open .menu-diagonal{
+
+    .menu-overlay.footer-open .menu-diagonal {
         height: 648px !important;
         text-align: center;
     }
-    
+
 }
+
+@media (max-width: 1024px) {
+
+    .abou,
+    .ski,
+    .port {
+        font-size: 88px !important;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 751px) {
+
+    .abou,
+    .ski,
+    .port {
+        font-size: 78px;
+    }
+
+    .menu-nav a {
+        width: 480px !important;
+    }
+
+    .overlay-sayhi h2 {
+        font-size: 48px !important;
+    }
+
+    .menu-overlay.footer-open .menu-diagonal {
+        height: 308px !important;
+    }
+}
+
 
 @media (min-width: 751px) and (max-width: 999px) {
     .skills-title span {
@@ -463,6 +496,47 @@
 }
 
 @media (max-width: 750px) {
+
+    .menu-overlay.footer-open .menu-diagonal {
+        height: 308px !important;
+    }
+
+    .menu-nav a+a {
+        height: 80px !important;
+
+    }
+
+    .overlay-sayhi h2::after {
+        content: "Say hi!";
+        font-size: 48px;
+        font-weight: 900;
+        letter-spacing: 1%;
+    }
+
+    .overlay-sayhi h2 {
+        font-size: 0px !important;
+    }
+
+    .corner-v {
+        width: 4px;
+        height: 24px !important;
+    }
+
+    .corner-h {
+        width: 18px !important;
+        height: 4px;
+    }
+
+    .menu-nav a {
+        width: 280px !important;
+    }
+
+    .abou,
+    .ski,
+    .port {
+        font-size: 45px !important;
+    }
+
     .project-side .right {
         position: absolute;
     }
