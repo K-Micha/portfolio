@@ -252,6 +252,7 @@ input:-webkit-autofill:focus {
   border-right: 4px solid transparent;
   border-top: 4px solid transparent;
   transition: border-color .2s ease;
+  font-family: 'Overpass', sans-serif;
 }
 
 .field:focus-within {

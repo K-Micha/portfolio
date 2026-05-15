@@ -301,6 +301,7 @@ main {
 
 .info span {
     font-size: 22px;
+     font-family: 'Overpass', sans-serif;
 }
 
 .skills .container {

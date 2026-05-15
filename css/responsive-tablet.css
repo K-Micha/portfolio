@@ -1,4 +1,8 @@
 @media (min-height: 1800px) {
+    .contact-overlay{
+        height: 480px;
+        margin-top: 0 !important;
+    }
     .menu-nav{
          display: flex;
     flex-direction: column;

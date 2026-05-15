@@ -74,6 +74,11 @@
 }
 
 @media (max-width: 600px) {
+    .legal a {
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+
     .arrow-container {
         width: 250px;
         height: 250px;
@@ -134,7 +139,6 @@
 }
 
 @media (max-width: 450px) {
-
     .project-content {
         padding: 0 24px !important;
     }
@@ -269,9 +273,9 @@
     }
 
     .contact-form {
-        width: 100%;
-        max-width: 340px;
-        margin: 0 auto;
+        max-width: 100% !important;
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
     }
 
@@ -286,12 +290,22 @@
         text-align: center;
     }
 
-    .scroll{
+    .scroll {
         right: 0px;
+    }
+
+    .error-text {
+        text-align: center;
     }
 }
 
 @media (max-width: 380px) {
+    .contact {
+        padding: 0 24px !important;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
     body {
         overflow-x: hidden;
     }
@@ -307,6 +321,18 @@
 }
 
 @media (max-width: 350px) {
+    .btn-container {
+        justify-content: center;
+    }
+
+    .field {
+        width: 280px;
+        align-self: center;
+    }
+
+    .menu-overlay.footer-open .menu-diagonal {
+        height: 348px !important;
+    }
 
     .hover-border,
     .hover-circle {

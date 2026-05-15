@@ -1,7 +1,14 @@
+@media (min-width: 1600px){
+    .contact-overlay{
+        padding-top: 0;
+        height: 380px;
+        max-height: 100dvh;
+    }
+}
+
 .legal-notice {
     width: 100%;
     max-width: 1440px;
-    max-width: 968px;
     margin: 0 auto;
     padding: 30px 140px 40px 200px;
     box-sizing: border-box;
@@ -196,6 +203,7 @@
 }
 
 @media (min-width: 767px) and (max-width: 1030px) {
+
     .privacy-policy h1 {
         font-size: 54px;
     }
@@ -210,5 +218,11 @@
 
     .legal-notice {
         padding: 30px 84px;
+    }
+}
+
+@media (max-width: 600px){
+    .footer{
+        padding: 0 !important;
     }
 }

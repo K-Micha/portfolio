@@ -1,3 +1,4 @@
+// Alle Frames definieren
 const frames = [
   '/assets/animation/arrow-icons/Frame0.png',
   '/assets/animation/arrow-icons/Frame1.svg',
@@ -8,33 +9,30 @@ const frames = [
   '/assets/animation/arrow-icons/Frame0.png'
 ];
 
-// Preload all frames once
-const preloaded = [];
-frames.forEach(src => {
+// Preload in RAM (einmalig)
+const preloaded = frames.map(src => {
   const img = new Image();
   img.src = src;
-  preloaded.push(img);
+  return img;
 });
 
+// Arrow-Element
 const arrow = document.getElementById('scroll-arrow');
 
+// Animation Variablen
 let progress = 0;
 let paused = false;
 
 const speed = 1000 / 60;
 const step = 2;
 
-/**
-* Updates the current frame based on progress.
-*/
+// Frame aktualisieren (NUR RAM → KEIN Network)
 function updateAnimation() {
   const index = Math.floor(progress / (100 / frames.length));
-  arrow.src = preloaded[index].src; // ← aus Cache
+  arrow.style.backgroundImage = `url('${preloaded[index].src}')`;
 }
 
-/**
-* Advances progress and triggers pause at the end of the cycle.
-*/
+// Fortschritt erhöhen
 function advanceProgress() {
   progress += step;
 
@@ -48,9 +46,7 @@ function advanceProgress() {
   }
 }
 
-/**
-* Runs one animation tick unless paused.
-*/
+// Tick
 function tick() {
   if (paused) return;
 
@@ -58,8 +54,9 @@ function tick() {
   advanceProgress();
 }
 
-
+// Start
 setInterval(tick, speed);
+
 
 const menu = document.getElementById('menu');
 const topL = document.getElementById('top');
