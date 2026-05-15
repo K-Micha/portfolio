@@ -218,6 +218,9 @@
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.05s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .overlay-sayhi h2 {

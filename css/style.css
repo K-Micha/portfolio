@@ -441,6 +441,11 @@ main {
     position: relative;
     background: #000;
     clip-path: polygon(0 0, 100% 8vw, 100% 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
 
 .contact-overlay {
@@ -496,6 +501,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 69px;
 }
 
 .footer-left {

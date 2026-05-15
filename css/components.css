@@ -366,8 +366,11 @@ input:-webkit-autofill:focus {
 }
 
 .error-text {
-  color: rgba(230, 28, 64, 1) !important;
+   color: rgba(230, 28, 64, 1) !important;
   font-size: 12px;
+  display: block;
+  height: 16px;
+  min-height: 16px;
   line-height: 16px;
   opacity: 0;
   visibility: hidden;
