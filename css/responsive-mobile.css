@@ -94,7 +94,7 @@
 }
 
 @media (max-width: 450px) {
-    .overlay-socials{
+    .overlay-socials {
         justify-self: center !important;
     }
 
@@ -248,10 +248,13 @@
     }
 
     .contact-form {
-        max-width: 100% !important;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        max-width: 1240px;
+        width: 617px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-self: center;
     }
 
     .menu-nav {
@@ -275,12 +278,15 @@
 }
 
 @media (max-width: 380px) {
+    .contact-form {
+        width: 320px !important;
+    }
+
     .menu-nav {
         gap: 20px;
     }
 
     .contact {
-        padding: 0 24px !important;
         box-sizing: border-box;
         overflow-x: hidden;
     }

@@ -28,6 +28,10 @@ button {
     font-family: 'Overpass', sans-serif;
 }
 
+.dsp-none{
+    display: none;
+}
+
 .hero-title .title-line,
 .hero-title .second-line {
     font-family: 'Syne' !important;
@@ -94,6 +98,13 @@ main {
     font-weight: bolder;
     letter-spacing: -2.5%;
     justify-self: center;
+    text-align: center;
+}
+
+.contact-form-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-title .second-line {
@@ -177,14 +188,15 @@ main {
 }
 
 .top-inner {
-    display: flex;
-    align-items: center;
     gap: 12px;
     margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-header-bottom {
-    height: 260px;
+    height: 360px;
     position: relative;
     margin-right: 30px;
 }
@@ -214,7 +226,7 @@ main {
 }
 
 .email {
-    transform: translateY(130px) rotate(-90deg);
+    transform: translateY(230px) rotate(-90deg);
 }
 
 .bottom-row {
@@ -441,19 +453,10 @@ main {
     position: relative;
     background: #000;
     clip-path: polygon(0 0, 100% 8vw, 100% 100%, 0 100%);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
 }
 
 .contact-overlay {
     padding-top: 120px;
-}
-
-.contact .container {
-    padding: 0 100px 0 104px;
 }
 
 .contact h2 {

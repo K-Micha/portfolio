@@ -4,7 +4,7 @@
     }
 }
 
-@media (max-width: 751px){
+@media (max-width: 751px) {
     html[lang="en"] .menu-nav a {
         width: 300px !important;
     }
@@ -71,6 +71,19 @@
     justify-items: center;
     padding-top: 93px;
     white-space: nowrap;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu-nav a {
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .abou,

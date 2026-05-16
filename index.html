@@ -354,7 +354,7 @@
                     </article>
 
                     <!-- PROJECT 3 -->
-                    <article class="project-item project-left">
+                    <article class="project-item project-left dsp-none">
                         <div class="project-content">
 
                             <div class="project-side project-media-side">
@@ -391,7 +391,7 @@
                     </article>
 
                     <!-- PROJECT 4 -->
-                    <article class="project-item project-right reverse">
+                    <article class="project-item project-right reverse dsp-none">
                         <div class="project-content">
 
                             <div class="project-side project-info-side">
@@ -532,62 +532,65 @@
                 </p>
 
             </div>
+            <div class="contact-footer-bg">
+                <form class="contact-form" onsubmit="return handleSubmit(event)">
 
-            <form class="contact-form" onsubmit="return handleSubmit(event)">
+                    <div class="field">
+                        <input type="text" id="name" placeholder=" " oninput="checkField(this)"
+                            onblur="checkField(this)" ondblclick="triggerError(this)" />
+                        <label for="name" data-i18n="form.name">Your name</label>
 
-                <div class="field">
-                    <input type="text" id="name" placeholder=" " oninput="checkField(this)" onblur="checkField(this)"
-                        ondblclick="triggerError(this)" />
-                    <label for="name" data-i18n="form.name">Your name</label>
+                        <span class="error-icon" onclick="fillField(this)">!</span>
+                        <span class="success-icon">✓</span>
+                    </div>
+                    <p class="error-text" data-i18n="form.messageError">Your name is required</p>
 
-                    <span class="error-icon" onclick="fillField(this)">!</span>
-                    <span class="success-icon">✓</span>
-                </div>
-                <p class="error-text" data-i18n="form.messageError">Your name is required</p>
+                    <div class="field">
+                        <input type="email" id="email" placeholder=" " oninput="checkField(this)"
+                            onblur="checkField(this)" ondblclick="triggerError(this)" />
+                        <label for="email" data-i18n="form.email">Your email</label>
 
-                <div class="field">
-                    <input type="email" id="email" placeholder=" " oninput="checkField(this)" onblur="checkField(this)"
-                        ondblclick="triggerError(this)" />
-                    <label for="email" data-i18n="form.email">Your email</label>
+                        <span class="error-icon" onclick="fillField(this)">!</span>
+                        <span class="success-icon">✓</span>
+                    </div>
+                    <p class="error-text" data-i18n="form.messageError">Your email is required</p>
 
-                    <span class="error-icon" onclick="fillField(this)">!</span>
-                    <span class="success-icon">✓</span>
-                </div>
-                <p class="error-text" data-i18n="form.messageError">Your email is required</p>
+                    <div class="field">
+                        <textarea id="message" placeholder=" " oninput="checkField(this)" onblur="checkField(this)"
+                            ondblclick="triggerError(this)"></textarea>
+                        <label for="message" data-i18n="form.message">Your message</label>
 
-                <div class="field">
-                    <textarea id="message" placeholder=" " oninput="checkField(this)" onblur="checkField(this)"
-                        ondblclick="triggerError(this)"></textarea>
-                    <label for="message" data-i18n="form.message">Your message</label>
-
-                    <span class="error-icon" onclick="fillField(this)">!</span>
-                    <span class="success-icon">✓</span>
-                </div>
-                <p class="error-text" data-i18n="form.messageError">Your message is required</p>
+                        <span class="error-icon" onclick="fillField(this)">!</span>
+                        <span class="success-icon">✓</span>
+                    </div>
+                    <p class="error-text" data-i18n="form.messageError">Your message is required</p>
 
 
-                <div class="contact-privacy">
-                    <span class="checkbox-bg">
-                        <input type="checkbox" id="privacy-check" onchange="updateButton()">
-                    </span>
+                    <div class="contact-privacy">
+                        <span class="checkbox-bg">
+                            <input type="checkbox" id="privacy-check" onchange="updateButton()">
+                        </span>
 
-                    <label for="privacy-check" data-i18n="form.privacyStart">I’ve read the</label>
+                        <label for="privacy-check" data-i18n="form.privacyStart">I’ve read the</label>
 
-                    <a href="../html/policy.htm" class="policy-link" data-i18n="form.privacyPolicy">privacy policy</a>
+                        <a href="../html/policy.htm" class="policy-link" data-i18n="form.privacyPolicy">privacy
+                            policy</a>
 
-                    <label class="padding" for="privacy-check" data-i18n="form.privacyEnd">
-                        and agree to the processing of my data as outlined.
-                    </label>
-                </div>
-                <p id="privacyError" class="error-text"></p>
+                        <label class="padding" for="privacy-check" data-i18n="form.privacyEnd">
+                            and agree to the processing of my data as outlined.
+                        </label>
+                    </div>
+                    <p id="privacyError" class="error-text"></p>
 
-                <div class="btn-container">
-                    <button id="sendBtn" type="submit" class="disabled-btn" data-i18n="form.send">Send message</button>
-                </div>
+                    <div class="btn-container">
+                        <button id="sendBtn" type="submit" class="disabled-btn" data-i18n="form.send">Send
+                            message</button>
+                    </div>
 
-                <p id="formMessage"></p>
+                    <p id="formMessage"></p>
 
-            </form>
+                </form>
+            </div>
 
             <div class="footer-arrow-wrapper">
                 <div class="arrow-up" onclick="scrollToTop()"></div>
