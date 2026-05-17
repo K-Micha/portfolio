@@ -367,7 +367,7 @@ input:-webkit-autofill:focus {
 
 .error-text {
    color: rgba(230, 28, 64, 1) !important;
-  font-size: 12px;
+  font-size: 16px;
   display: block;
   height: 16px;
   min-height: 16px;
@@ -395,14 +395,14 @@ input:-webkit-autofill:focus {
 
 .contact-form .contact-privacy label,
 a {
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Overpass', sans-serif;
   font-weight: 400;
 }
 
 .footer-arrow-wrapper {
   position: absolute;
-  right: max(40px, calc((100vw - 1240px) / 2));
+  right: max(40px, calc((100vw - 1240px) / 2)) !important;
   bottom: 150px;
   width: 30px;
   height: 60px;

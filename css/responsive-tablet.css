@@ -20,7 +20,7 @@
 
 }
 
-@media (min-height: 1000px) and (max-height: 1325px){
+@media (min-height: 1000px) and (max-height: 1325px) {
     .hero {
         min-height: 100vh;
     }
@@ -354,7 +354,6 @@
 
     .about-image-wrapper {
         width: auto !important;
-        left: 30px;
     }
 
     .about .left {
@@ -412,6 +411,12 @@
         justify-content: center;
         gap: 48px 32px;
         padding: 0 35px;
+    }
+}
+
+@media (min-width: 751px) {
+    .email {
+        margin-left: -150px;
     }
 }
 
@@ -595,8 +600,10 @@
     .email {
         position: absolute;
         transform: translateY(260px) rotate(-90deg);
+        font-size: 18px !important;
         left: 24px;
-        left: -100px;
+        left: -130px;
+        font-size: 22px;
     }
 
     .hero-title .title-line,
@@ -616,15 +623,6 @@
 
     .line .name {
         font-size: 23px;
-    }
-
-    .hero .container {
-        height: 630px;
-        position: relative;
-    }
-
-    .scroll {
-        transform: translateY(40px);
     }
 
     .about h2 {
@@ -798,7 +796,7 @@
 
     .footer-arrow-wrapper {
         position: absolute;
-        right: clamp(0px, calc((100vw - 1240px) / 2), 100px);
+        right: clamp(0px, calc((100vw - 1240px) / 2), 100px) !important;
         bottom: 150px;
         width: 30px;
         height: 60px;
@@ -816,10 +814,6 @@
 
     .contact-privacy .padding {
         padding-left: 35px;
-    }
-
-    footer {
-        padding: 0 40px 40px 0 !important;
     }
 }
 

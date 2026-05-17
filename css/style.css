@@ -28,7 +28,7 @@ button {
     font-family: 'Overpass', sans-serif;
 }
 
-.dsp-none{
+.dsp-none {
     display: none;
 }
 
@@ -67,6 +67,7 @@ main {
 .container {
     max-width: 1440px;
     margin: 0 auto;
+    padding: 0 100px 0 100px;
 }
 
 .container-right {
@@ -86,12 +87,11 @@ main {
     padding: 0 100px 0 100px;
 }
 
-.hero {
-    margin-top: calc(204px - 90px);
-}
-
 .hero .container {
     font-family: 'Syne', sans-serif;
+    min-height: calc(100vh - 210px);
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-title {
@@ -184,7 +184,11 @@ main {
 }
 
 .hero-header-top {
-    justify-self: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .top-inner {
@@ -203,8 +207,8 @@ main {
 
 .scroll {
     position: absolute;
-    right: 40px;
-    bottom: 0px;
+    right: -30px;
+    bottom: -50px;
     transform: translateX(0);
 }
 
@@ -217,6 +221,7 @@ main {
     width: 100%;
     height: 3px;
     background: #000;
+    font-family: 'Overpass', sans-serif;
 }
 
 .name-box .name {
@@ -227,6 +232,7 @@ main {
 
 .email {
     transform: translateY(230px) rotate(-90deg);
+    font-size: 22px;
 }
 
 .bottom-row {
@@ -449,7 +455,6 @@ main {
 .contact-footer-bg {
     z-index: 1;
     margin-top: -50px;
-    height: 1061;
     position: relative;
     background: #000;
     clip-path: polygon(0 0, 100% 8vw, 100% 100%, 0 100%);
